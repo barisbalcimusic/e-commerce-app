@@ -1,0 +1,80 @@
+header {
+  @include flex-row-centered;
+  width: 100%;
+  height: 15%;
+  min-height: 100px;
+  background-color: $primary;
+  nav {
+    @include flex-row-spaced;
+    width: 100%;
+    .nav-logo {
+      width: 70px;
+      height: 70px;
+      margin-left: 10px;
+      .logo {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 10px;
+        box-shadow: 0px 0px 5px 0px black;
+        &:hover {
+          box-shadow: 0px 0px 5px 3px rgb(101, 200, 246);
+          cursor: pointer;
+        }
+      }
+    }
+    .nav-search {
+      @include flex-row-spaced;
+      width: 600px;
+      gap: 5px;
+      .search-input {
+        width: 100%;
+        padding: 20px;
+        border: none;
+        border-radius: 5px;
+        &:focus {
+          outline: none;
+        }
+      }
+      button {
+        padding: 20px 15px;
+        border-radius: 5px;
+        border: none;
+        &:hover {
+          background-color: azure;
+        }
+      }
+    }
+    .nav-user {
+      @include flex-row-spaced;
+      margin-right: 10px;
+      gap: 20px;
+      border: solid 1px black;
+      border-radius: 5px;
+      .cart-icon,
+      .user-icon {
+        color: black;
+        width: 30px;
+        height: 30px;
+        padding: 15px;
+        cursor: pointer;
+        &:hover {
+          color: wheat;
+        }
+      }
+    }
+  }
+}
+
+ul {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 0;
+  li {
+    list-style: none;
+    a {
+      text-decoration: none;
+    }
+  }
+}

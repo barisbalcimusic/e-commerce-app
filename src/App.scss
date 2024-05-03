@@ -1,0 +1,36 @@
+@import "./styles/Variables";
+@import "./styles/Mixin";
+@import "./styles/Footer";
+@import "./styles/Header";
+@import "./styles/Login";
+@import "./styles/ProductCard";
+@import "./styles/Registration";
+
+*::placeholder {
+  font-style: italic;
+}
+
+.login-form,
+.registration-form {
+  width: 500px;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+input:not(.search-input) {
+  width: 300px;
+  padding: 10px;
+  border: none;
+  &:focus {
+    outline: none;
+  }
+}
+
+button {
+  padding: 10px;
+  cursor: pointer;
+}
