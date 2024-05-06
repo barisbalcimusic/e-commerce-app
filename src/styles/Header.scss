@@ -1,67 +1,108 @@
 header {
-  @include flex-row-centered;
+  @include flex-col-centered;
   width: 100%;
   height: 15%;
+  padding: 20px 0px;
   min-height: 100px;
   background-color: $primary;
   nav {
-    @include flex-row-spaced;
+    @include flex-col-centered;
     width: 100%;
-    .nav-logo {
-      width: 70px;
-      height: 70px;
-      margin-left: 10px;
+    gap: 10px;
+    position: relative;
+    .nav-top {
       .logo {
-        width: 100%;
-        height: 100%;
+        width: 50px;
+        height: 50px;
         object-fit: cover;
-        border-radius: 10px;
-        box-shadow: 0px 0px 5px 0px black;
+        border-radius: 5px;
+        box-shadow: 0px 0px 4px 0px gray;
         &:hover {
-          box-shadow: 0px 0px 5px 3px rgb(101, 200, 246);
+          box-shadow: 0px 0px 4px 2px gray;
           cursor: pointer;
         }
       }
     }
-    .nav-search {
+    .nav-center {
       @include flex-row-spaced;
-      width: 600px;
-      gap: 5px;
-      .search-input {
-        width: 100%;
-        padding: 20px;
-        border: none;
-        border-radius: 5px;
-        &:focus {
-          outline: none;
+      .nav-left {
+        @include flex-row-centered;
+        width: 40px;
+        height: 40px;
+        position: absolute;
+        left: 10px;
+        .menu-icon {
+          font-size: 30px;
         }
       }
-      button {
-        padding: 20px 15px;
-        border-radius: 5px;
-        border: none;
-        &:hover {
-          background-color: azure;
+      .nav-middle {
+        @include flex-row-spaced;
+        width: 250px;
+        height: 40px;
+        gap: 5px;
+        .search-form {
+          display: flex;
+          align-items: center;
+          width: 100%;
+          height: 100%;
+          position: relative;
+          .glas-icon {
+            font-size: 20px;
+            position: absolute;
+            left: 5px;
+          }
+          .search-input {
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-radius: 5px;
+            text-align: center;
+            &:focus {
+              outline: none;
+            }
+          }
+        }
+      }
+      .nav-right {
+        @include flex-row-spaced;
+        gap: 10px;
+        position: absolute;
+        right: 20px;
+        .cart-icon,
+        .user-icon {
+          color: black;
+          font-size: 20px;
+          cursor: pointer;
+          &:hover {
+            color: $secondary;
+          }
         }
       }
     }
-    .nav-user {
-      @include flex-row-spaced;
-      margin-right: 10px;
-      gap: 20px;
-      border: solid 1px black;
-      border-radius: 5px;
-      .cart-icon,
-      .user-icon {
-        color: black;
-        width: 30px;
-        height: 30px;
-        padding: 15px;
-        cursor: pointer;
-        &:hover {
-          color: wheat;
-        }
-      }
+  }
+}
+
+aside {
+  width: 100vw;
+  height: 100vh;
+  background-color: $secondary;
+  position: absolute;
+  top: 15%;
+  left: -100vw;
+  transition: transform 0.3s 0s linear;
+  .close-icon {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 40px;
+  }
+  ul {
+    padding-left: 40px;
+    display: flex;
+    flex-direction: column;
+    font-weight: bold;
+    .category {
+      color: black;
     }
   }
 }

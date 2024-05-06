@@ -1,6 +1,6 @@
-import "../App.scss";
+import "../../App.scss";
 
-const Login = () => {
+const LoginForm = () => {
   return (
     <form className="login-form">
       <input type="text" placeholder="E-posta" />
@@ -10,4 +10,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default LoginForm;

@@ -1,26 +1,27 @@
-@import "./styles/Variables";
-@import "./styles/Mixin";
+@import "./styles/_variables";
+@import "./styles/_mixin";
+@import "./styles/_media";
 @import "./styles/Footer";
 @import "./styles/Header";
 @import "./styles/Login";
 @import "./styles/ProductCard";
 @import "./styles/Registration";
+@import "./styles/Products";
+@import "./styles/Home";
+@import "./styles/BestRatedProducts";
+@import "./styles/BestRatedProduct";
 
 *::placeholder {
   font-style: italic;
 }
-
 .login-form,
 .registration-form {
+  @include flex-col-centered;
   width: 500px;
   padding: 50px;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
   gap: 10px;
 }
-
 input:not(.search-input) {
   width: 300px;
   padding: 10px;
@@ -29,7 +30,6 @@ input:not(.search-input) {
     outline: none;
   }
 }
-
 button {
   padding: 10px;
   cursor: pointer;

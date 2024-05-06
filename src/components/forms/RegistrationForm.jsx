@@ -1,7 +1,7 @@
-import "../App.scss";
+import "../../App.scss";
 import { useState } from "react";
 
-const Registration = () => {
+const RegistrationForm = () => {
   const [newPassword, setNewPassword] = useState(null);
   const [warning, setWarning] = useState(false);
 
@@ -29,4 +29,4 @@ const Registration = () => {
   );
 };
 
-export default Registration;
+export default RegistrationForm;

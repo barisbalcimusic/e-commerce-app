@@ -1,12 +1,22 @@
-import Products from "../components/Products";
-import ProductsContextProvider from "../contexts/ProductsContext";
+import { useParams } from "react-router-dom";
+import Products from "../components/product/Products";
+import { useProductsContext } from "../contexts/ProductsContext";
 
 const Store = () => {
-  return (
-    <ProductsContextProvider>
-      <Products />
-    </ProductsContextProvider>
-  );
+  const url = useParams();
+  const { products } = useProductsContext();
+
+  return products ? (
+    Object.keys(url).length === 0 ? (
+      <Products products={products} />
+    ) : (
+      <Products
+        products={products.filter(
+          (product) => product.category === url.category
+        )}
+      />
+    )
+  ) : null;
 };
 
 export default Store;

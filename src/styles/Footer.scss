@@ -3,4 +3,14 @@ footer {
   height: 30%;
   min-height: 200px;
   background-color: $primary;
+  font-weight: bold;
+  ul {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    li {
+      font-weight: bold;
+    }
+  }
 }

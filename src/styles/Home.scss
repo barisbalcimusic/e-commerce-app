@@ -1,0 +1,26 @@
+.categories-div {
+  @include flex-col-spaced;
+  gap: 10px;
+  padding: 10px;
+  h2 {
+    margin: 0;
+  }
+  .categories {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    .category-box {
+      @include flex-row-centered;
+      width: 200px;
+      height: 100px;
+      background-color: $secondary;
+      border-radius: 10px;
+      cursor: pointer;
+      a {
+        color: black;
+        text-decoration: none;
+        font-weight: bold;
+      }
+    }
+  }
+}

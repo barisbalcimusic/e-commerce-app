@@ -1,7 +1,7 @@
-import { useEffect, useState, createContext } from "react";
-import fetchProductData from "../components/fetchProductData";
+import { useEffect, useState, createContext, useContext } from "react";
+import fetchProductData from "../components/data/fetchProductData";
 
-export const ProductsContext = createContext();
+const ProductsContext = createContext();
 
 const ProductsContextProvider = ({ children }) => {
   const [products, setProducts] = useState(null);
@@ -12,13 +12,23 @@ const ProductsContextProvider = ({ children }) => {
       setProducts(data.products);
     };
     getProductsData();
-  }, [products]); //* why should we use products here?
+  }, []);
+
+  //filter category names
+  const categories = [];
+  if (products)
+    products.forEach((product) => {
+      if (!categories.includes(product.category))
+        categories.push(product.category);
+    });
 
   return (
-    <ProductsContext.Provider value={{ products }}>
+    <ProductsContext.Provider value={{ products, categories }}>
       {children}
     </ProductsContext.Provider>
   );
 };
 
 export default ProductsContextProvider;
+
+export const useProductsContext = () => useContext(ProductsContext);

@@ -1,21 +1,28 @@
+import "./App.scss";
 import { Route, Routes } from "react-router-dom";
-import Layout from "./components/Layout";
+import Layout from "./components/layout/Layout";
 import Home from "./pages/Home";
 import Store from "./pages/Store";
-import Login from "./pages/Login";
-import Registration from "./pages/Registration";
-import "./App.scss";
+import Credentials from "./pages/Credentials";
+import Cart from "./pages/Cart";
+import ProductsContextProvider from "./contexts/ProductsContext";
+import ProductDetail from "./pages/ProductDetail";
+import Products from "./components/product/Products";
 
 const App = () => {
   return (
-    <Layout>
-      <Routes>
-        <Route path="/" element={<Home />}></Route>
-        <Route path="/store" element={<Store />}></Route>
-        <Route path="/login" element={<Login />}></Route>
-        <Route path="/register" element={<Registration />}></Route>
-      </Routes>
-    </Layout>
+    <ProductsContextProvider>
+      <Layout>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/cart" element={<Cart />} />
+          <Route path="/store/" element={<Store />} />
+          <Route path="/store/:category" element={<Store />} />
+          <Route path="/store/:id" element={<ProductDetail />} />
+          <Route path="/user" element={<Credentials />} />
+        </Routes>
+      </Layout>
+    </ProductsContextProvider>
   );
 };
 
