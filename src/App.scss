@@ -3,35 +3,14 @@
 @import "./styles/_media";
 @import "./styles/Footer";
 @import "./styles/Header";
-@import "./styles/Login";
 @import "./styles/ProductCard";
-@import "./styles/Registration";
 @import "./styles/Products";
 @import "./styles/Home";
 @import "./styles/BestRatedProducts";
 @import "./styles/BestRatedProduct";
 @import "./styles/ProductDetail";
+@import "./styles/Credentials";
 
 *::placeholder {
   font-style: italic;
-}
-.login-form,
-.registration-form {
-  @include flex-col-centered;
-  width: 500px;
-  padding: 50px;
-  display: flex;
-  gap: 10px;
-}
-input:not(.search-input) {
-  width: 300px;
-  padding: 10px;
-  border: none;
-  &:focus {
-    outline: none;
-  }
-}
-button {
-  padding: 10px;
-  cursor: pointer;
 }

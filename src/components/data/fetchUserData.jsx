@@ -1,6 +1,6 @@
 const fetchUserData = async () => {
   try {
-    const res = await fetch("./authorisation.json");
+    const res = await fetch("http://localhost:3000/admins");
     const data = await res.json();
     return data;
   } catch (error) {

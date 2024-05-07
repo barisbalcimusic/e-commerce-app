@@ -1,30 +1,35 @@
 import "../../App.scss";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const RegistrationForm = () => {
   const [newPassword, setNewPassword] = useState(null);
-  const [warning, setWarning] = useState(false);
+  const [warning, setWarning] = useState();
 
-  const checkPassword = () => {
-    if (newPassword.length < 8) {
-      setWarning(true);
+  useEffect(() => {
+    if (newPassword) {
+      const checkPassword = () => {
+        newPassword.length < 8
+          ? setWarning("Password must contain at least 8 Characters")
+          : setWarning(null);
+      };
+      checkPassword();
     }
-  };
+  }, [newPassword]);
 
   return (
     <form className="registration-form">
-      <input type="text" placeholder="Ad" />
-      <input type="text" placeholder="Soyad" />
-      <input type="text" placeholder="E-posta" />
-      <p className="pass-warning">{warning}</p>
+      <input className="form-input" type="text" placeholder="First name" />
+      <input className="form-input" type="text" placeholder="Last name" />
+      <input className="form-input" type="text" placeholder="Email" />
       <input
         value={newPassword ? newPassword : ""}
-        onChange={(e) => setNewPassword(e.target.value)}
         type="text"
-        placeholder="Sifre"
+        className="form-input"
+        placeholder="Password"
+        onChange={(e) => setNewPassword(e.target.value)}
       />
-      <input type="text" placeholder="E-posta" />
-      <button type="submit">Kayit ol</button>
+      <button type="submit">Register</button>
+      <p className="warning">{warning}</p>
     </form>
   );
 };
