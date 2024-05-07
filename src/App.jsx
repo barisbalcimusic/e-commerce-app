@@ -7,21 +7,26 @@ import Credentials from "./pages/Credentials";
 import Cart from "./pages/Cart";
 import ProductsContextProvider from "./contexts/ProductsContext";
 import ProductDetail from "./pages/ProductDetail";
-import Products from "./components/product/Products";
+import SidebarContextProvider from "./contexts/SidebarContext";
 
 const App = () => {
   return (
     <ProductsContextProvider>
-      <Layout>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/cart" element={<Cart />} />
-          <Route path="/store/" element={<Store />} />
-          <Route path="/store/:category" element={<Store />} />
-          <Route path="/store/:id" element={<ProductDetail />} />
-          <Route path="/user" element={<Credentials />} />
-        </Routes>
-      </Layout>
+      <SidebarContextProvider>
+        <Layout>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/cart" element={<Cart />} />
+            <Route path="/store/" element={<Store />} />
+            <Route path="/store/:category" element={<Store />} />
+            <Route
+              path="/store/product-detail/:id"
+              element={<ProductDetail />}
+            />
+            <Route path="/user" element={<Credentials />} />
+          </Routes>
+        </Layout>
+      </SidebarContextProvider>
     </ProductsContextProvider>
   );
 };

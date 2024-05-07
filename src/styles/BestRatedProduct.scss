@@ -3,23 +3,25 @@
   grid-template-columns: repeat(2, 1fr);
   gap: 20px;
   .best-rated-product {
-    @include flex-col-centered;
-    width: 200px;
-    height: 200px;
-    background-color: $secondary;
-    border-radius: 10px;
     * {
       margin: 0;
     }
+    @include flex-col-centered;
+    gap: 10px;
+    color: black;
+    text-decoration: none;
+    width: 200px;
+    height: 200px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 0px 5px 0px lightgray;
     img {
       width: 150px;
       height: 100px;
       object-fit: cover;
     }
-    a {
-      color: black;
-      text-decoration: none;
-      font-weight: bold;
+    .title {
+      text-align: center;
     }
   }
 }

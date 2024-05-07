@@ -2,9 +2,9 @@ import { Link } from "react-router-dom";
 
 const Category = ({ category }) => {
   return (
-    <div className="category-box">
-      <Link to={`/store/${category}`}>{category}</Link>
-    </div>
+    <Link className="category-box" to={`/store/${category}`}>
+      {category}
+    </Link>
   );
 };
 

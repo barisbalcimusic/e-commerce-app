@@ -3,11 +3,11 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useProductsContext } from "../../contexts/ProductsContext";
 import { Link } from "react-router-dom";
 
-const Sidebar = ({ reference, handleSidebarClick }) => {
+const Sidebar = ({ sidebarRef, handleSidebarClick }) => {
   const { categories } = useProductsContext();
 
   return (
-    <aside ref={reference}>
+    <aside ref={sidebarRef}>
       <FontAwesomeIcon
         onClick={() => handleSidebarClick()}
         className="close-icon"

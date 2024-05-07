@@ -8,19 +8,12 @@ import {
   faMagnifyingGlass,
   faUser,
 } from "@fortawesome/free-solid-svg-icons";
-import { useRef, useState } from "react";
 import Sidebar from "./Sidebar";
+import { useSidebarContext } from "../../contexts/SidebarContext";
 
 const Header = () => {
-  const [sidebarOpened, setSidebarOpened] = useState(false);
-  const sidebarRef = useRef(null);
-
-  const handleSidebarClick = () => {
-    sidebarRef.current.style.transform = `translateX(${
-      sidebarOpened ? "-100vw" : "100vw"
-    })`;
-    setSidebarOpened(!sidebarOpened);
-  };
+  const { isSidebarOpened, handleSidebarClick, sidebarRef } =
+    useSidebarContext();
 
   return (
     <header>
@@ -58,7 +51,10 @@ const Header = () => {
           </div>
         </div>
       </nav>
-      <Sidebar reference={sidebarRef} handleSidebarClick={handleSidebarClick} />
+      <Sidebar
+        sidebarRef={sidebarRef}
+        handleSidebarClick={handleSidebarClick}
+      />
     </header>
   );
 };
