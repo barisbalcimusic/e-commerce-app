@@ -22,7 +22,7 @@ const RegistrationForm = ({ setRegistrationSuccess }) => {
     }
   }, [newPassword]);
 
-  //2- call submit function
+  //2- change submit state
   const handleSubmit = (e) => {
     e.preventDefault();
     setIsSubmitted(true);
@@ -65,7 +65,7 @@ const RegistrationForm = ({ setRegistrationSuccess }) => {
         },
         body: JSON.stringify({ email: email, password: newPassword }),
       });
-      setRegistrationSuccess(true); //*this works
+      setRegistrationSuccess(true);
     } catch (error) {
       console.log(error);
     }

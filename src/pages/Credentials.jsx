@@ -4,9 +4,9 @@ import RegistrationForm from "../components/forms/RegistrationForm";
 import { useNavigate } from "react-router-dom";
 
 const Credentials = () => {
-  const [loggedIn, setLoggedIn] = useState(false);
   const [selection, setSelection] = useState(null);
   const [registrationSuccess, setRegistrationSuccess] = useState(false);
+  const [loginSuccess, setLoginSuccess] = useState(false);
   const [count, setCount] = useState(3);
   const navigate = useNavigate();
 
@@ -18,12 +18,12 @@ const Credentials = () => {
   //if success, show message and start countdown
   let countdown;
   useEffect(() => {
-    if (registrationSuccess) {
+    if (registrationSuccess || loginSuccess) {
       countdown = setInterval(() => {
         setCount((count) => count - 1);
       }, 1000);
     }
-  }, [registrationSuccess]);
+  }, [registrationSuccess, loginSuccess]);
 
   //when countdown ends, redirect to home
   useEffect(() => {
@@ -35,7 +35,16 @@ const Credentials = () => {
 
   return (
     <div className="credentials">
-      {!registrationSuccess ? (
+      {registrationSuccess ? (
+        <p>
+          Succesfull registered! You will be redirected in <b>{count}</b>{" "}
+          seconds.
+        </p>
+      ) : loginSuccess ? (
+        <p>
+          Login successfull! You will be redirected in <b>{count}</b> seconds.
+        </p>
+      ) : (
         <>
           <h2>Welcome</h2>
           <div className="selecting-div">
@@ -66,15 +75,12 @@ const Credentials = () => {
                 />
                 <label htmlFor="log-in">Log-in</label>
               </div>
-              {!selection || selection === "log-in" ? <LoginForm /> : null}
+              {!selection || selection === "log-in" ? (
+                <LoginForm setLoginSuccess={setLoginSuccess} />
+              ) : null}
             </div>
           </div>
         </>
-      ) : (
-        <p>
-          Succesfull registered! You will be redirected in <b>{count}</b>{" "}
-          seconds.
-        </p>
       )}
     </div>
   );
