@@ -10,6 +10,7 @@ const LoginForm = ({ setLoggedIn }) => {
   const [success, setSuccess] = useState(null);
   const [userData, setUserData] = useState();
 
+  //0- get the user data
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -22,13 +23,13 @@ const LoginForm = ({ setLoggedIn }) => {
     fetchData();
   }, []);
 
+  //2- check if the user already exists
   const handleLogin = (e) => {
     e.preventDefault();
-    if (
-      userData.filter(
-        (user) => user.email === email && user.password === password
-      )
-    ) {
+    const userExists = userData.filter(
+      (user) => user.email === email && user.password === password
+    );
+    if (!userExists) {
       setSuccess(true);
       setLoggedIn(true);
       handleNavigation();
@@ -37,11 +38,12 @@ const LoginForm = ({ setLoggedIn }) => {
     }
   };
 
-  const handleNavigation = () => {
-    success ? navigate("/") : null;
-  };
+  useEffect(() => {
+    if (success) navigate("/");
+  }, [success]);
 
   return (
+    //1- submit form
     <form onSubmit={handleLogin} className="login-form">
       <input
         className="form-input"
@@ -56,13 +58,13 @@ const LoginForm = ({ setLoggedIn }) => {
         value={password}
         onChange={(e) => setPassword(e.target.value)}
         name="password"
-        type="text"
+        type="password"
         placeholder="Password"
       />
       <button type="submit">Login</button>
-      <p className="warning">
-        {!success ? "your email or password is wrong" : null}
-      </p>
+      {success ? (
+        <p className="warning">your email or password is wrong</p>
+      ) : null}
     </form>
   );
 };
