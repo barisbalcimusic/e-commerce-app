@@ -10,10 +10,12 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import Sidebar from "./Sidebar";
 import { useSidebarContext } from "../../contexts/SidebarContext";
+import { useAuthContext } from "../../contexts/AuthContext";
 
 const Header = () => {
   const { isSidebarOpened, handleSidebarClick, sidebarRef } =
     useSidebarContext();
+  const { isLoggedIn } = useAuthContext();
 
   return (
     <header>
@@ -42,7 +44,7 @@ const Header = () => {
             </form>
           </div>
           <div className="nav-right">
-            <Link to="/user">
+            <Link to={isLoggedIn ? "/user" : "/auth"}>
               <FontAwesomeIcon className="user-icon" icon={faUser} />
             </Link>
             <Link to="/cart">

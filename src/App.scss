@@ -6,11 +6,18 @@
 @import "./styles/ProductCard";
 @import "./styles/Products";
 @import "./styles/Home";
-@import "./styles/BestRatedProducts";
 @import "./styles/BestRatedProduct";
 @import "./styles/ProductDetail";
 @import "./styles/Credentials";
 
 *::placeholder {
   font-style: italic;
+}
+
+.add-button {
+  font-weight: bold;
+  padding: 10px 30px;
+  background-color: $secondary;
+  border: none;
+  border-radius: 20px;
 }

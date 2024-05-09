@@ -3,4 +3,8 @@
   @include flex-row-centered;
   flex-wrap: wrap;
   gap: 10px;
+  a {
+    color: black;
+    text-decoration: none;
+  }
 }

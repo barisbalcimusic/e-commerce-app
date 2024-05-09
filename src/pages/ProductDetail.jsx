@@ -1,5 +1,6 @@
 import { useParams } from "react-router-dom";
 import { useProductsContext } from "../contexts/ProductsContext";
+import AddButton from "../components/AddButton";
 
 const ProductDetail = () => {
   const { id } = useParams();
@@ -14,7 +15,7 @@ const ProductDetail = () => {
       <p className="title">{selectedProduct[0].title}</p>
       <img src={selectedProduct[0].thumbnail} alt="product-picture" />
       <p>{selectedProduct[0].price} $</p>
-      <button>Add to Cart</button>
+      <AddButton />
     </div>
   ) : (
     <p>loading...</p>

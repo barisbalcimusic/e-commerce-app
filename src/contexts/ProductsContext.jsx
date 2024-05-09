@@ -1,7 +1,7 @@
 import { useEffect, useState, createContext, useContext } from "react";
 import fetchProductData from "../components/data/fetchProductData";
 
-const ProductsContext = createContext();
+const productsContext = createContext();
 
 const ProductsContextProvider = ({ children }) => {
   const [products, setProducts] = useState(null);
@@ -9,7 +9,7 @@ const ProductsContextProvider = ({ children }) => {
   useEffect(() => {
     const getProductsData = async () => {
       const data = await fetchProductData();
-      setProducts(data.products);
+      setProducts(data);
     };
     getProductsData();
   }, []);
@@ -23,12 +23,12 @@ const ProductsContextProvider = ({ children }) => {
     });
 
   return (
-    <ProductsContext.Provider value={{ products, categories }}>
+    <productsContext.Provider value={{ products, categories }}>
       {children}
-    </ProductsContext.Provider>
+    </productsContext.Provider>
   );
 };
 
 export default ProductsContextProvider;
 
-export const useProductsContext = () => useContext(ProductsContext);
+export const useProductsContext = () => useContext(productsContext);

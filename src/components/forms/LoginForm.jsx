@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import "../../App.scss";
 import fetchUserData from "../data/fetchUserData";
+import { useAuthContext } from "../../contexts/AuthContext";
 
 const LoginForm = ({ setLoginSuccess }) => {
   const [email, setEmail] = useState("");
@@ -8,6 +9,7 @@ const LoginForm = ({ setLoginSuccess }) => {
   const [userData, setUserData] = useState();
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [loginWarning, setLoginWarning] = useState(false);
+  const { setIsLoggedIn } = useAuthContext();
 
   //1- change submit state
   const handleSubmit = (e) => {
@@ -39,6 +41,7 @@ const LoginForm = ({ setLoginSuccess }) => {
       if (userExists.length !== 0) {
         setLoginWarning(false);
         setLoginSuccess(true);
+        setIsLoggedIn(true); //! sorun var
       } else {
         setLoginWarning(true);
         setIsSubmitted(false);
