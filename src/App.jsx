@@ -9,25 +9,30 @@ import ProductDetail from "./pages/ProductDetail";
 import SidebarContextProvider from "./contexts/SidebarContext";
 import AuthContextProvider from "./contexts/AuthContext";
 import UserAccount from "./pages/UserAccount";
+import ShoppingCart from "./pages/ShoppingCart";
+import CartContextProvider from "./contexts/CartContext";
 
 const App = () => {
   return (
     <ProductsContextProvider>
       <SidebarContextProvider>
         <AuthContextProvider>
-          <Layout>
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/store/" element={<Store />} />
-              <Route path="/store/:category" element={<Store />} />
-              <Route
-                path="/store/product-detail/:id"
-                element={<ProductDetail />}
-              />
-              <Route path="/auth" element={<Credentials />} />
-              <Route path="/user" element={<UserAccount />} />
-            </Routes>
-          </Layout>
+          <CartContextProvider>
+            <Layout>
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/store/" element={<Store />} />
+                <Route path="/store/:category" element={<Store />} />
+                <Route
+                  path="/store/product-detail/:id"
+                  element={<ProductDetail />}
+                />
+                <Route path="/auth" element={<Credentials />} />
+                <Route path="/user" element={<UserAccount />} />
+                <Route path="/cart" element={<ShoppingCart />} />
+              </Routes>
+            </Layout>
+          </CartContextProvider>
         </AuthContextProvider>
       </SidebarContextProvider>
     </ProductsContextProvider>

@@ -11,11 +11,13 @@ import {
 import Sidebar from "./Sidebar";
 import { useSidebarContext } from "../../contexts/SidebarContext";
 import { useAuthContext } from "../../contexts/AuthContext";
+import { useCartContext } from "../../contexts/CartContext";
 
 const Header = () => {
   const { isSidebarOpened, handleSidebarClick, sidebarRef } =
     useSidebarContext();
   const { isLoggedIn } = useAuthContext();
+  const { cart } = useCartContext();
 
   return (
     <header>
@@ -49,6 +51,7 @@ const Header = () => {
             </Link>
             <Link to="/cart">
               <FontAwesomeIcon className="cart-icon" icon={faCartShopping} />
+              <p className="count">{cart.length}</p>
             </Link>
           </div>
         </div>

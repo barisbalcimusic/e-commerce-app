@@ -4,17 +4,23 @@ import AddButton from "../AddButton";
 
 const ProductCard = ({ product }) => {
   return (
-    <Link to={`/store/product-detail/${product.id}`} className="product-card">
+    <div className="product-card">
       <div className="product-image">
         <img src={product.thumbnail} alt="product-thumbnail" />
       </div>
       <div className="product-info">
         <h3>{product.title}</h3>
         <p>{product.description}</p>
-        <p>{product.price}$</p>
-        <AddButton />
+        <p className="price">
+          {product.price}
+          <span>$</span>
+        </p>
+        <AddButton product={product} />
+        <Link className="details" to={`/store/product-detail/${product.id}`}>
+          see more details...
+        </Link>
       </div>
-    </Link>
+    </div>
   );
 };
 

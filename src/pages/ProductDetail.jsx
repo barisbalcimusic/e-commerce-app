@@ -6,16 +6,20 @@ const ProductDetail = () => {
   const { id } = useParams();
   const { products } = useProductsContext();
 
-  let selectedProduct;
+  let filteredProduct;
   if (products) {
-    selectedProduct = products.filter((product) => product.id === parseInt(id));
+    filteredProduct = products.filter(
+      (product) => parseInt(product.id) === parseInt(id)
+    )[0];
   }
-  return selectedProduct ? (
+
+  return filteredProduct ? (
     <div className="product-detail">
-      <p className="title">{selectedProduct[0].title}</p>
-      <img src={selectedProduct[0].thumbnail} alt="product-picture" />
-      <p>{selectedProduct[0].price} $</p>
-      <AddButton />
+      <p className="title">{filteredProduct.title}</p>
+      <img src={filteredProduct.thumbnail} alt="product-picture" />
+      <p>{filteredProduct.description}</p>
+      <p>{filteredProduct.price} $</p>
+      <AddButton product={filteredProduct} />
     </div>
   ) : (
     <p>loading...</p>

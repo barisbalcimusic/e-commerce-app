@@ -22,5 +22,24 @@
     display: flex;
     flex-direction: column;
     gap: 10px;
+    .price {
+      text-align: right;
+      font-size: 23px;
+      font-weight: bold;
+      padding: 0;
+      span {
+        vertical-align: text-top;
+        font-size: 15px;
+      }
+    }
+    .details {
+      color: rgba(45, 83, 236, 0.89);
+      font-weight: bold;
+      font-size: 15px;
+      font-style: italic;
+      &:hover {
+        color: red;
+      }
+    }
   }
 }
