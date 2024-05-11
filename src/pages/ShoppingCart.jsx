@@ -1,4 +1,3 @@
-import Counter from "../components/product/Counter";
 import ProductInCart from "../components/product/ProductInCart";
 import { useCartContext } from "../contexts/CartContext";
 
