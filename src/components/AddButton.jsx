@@ -1,17 +1,26 @@
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import { useCartContext } from "../contexts/CartContext";
 
 const AddButton = ({ product }) => {
   const { cart, setCart } = useCartContext();
   const buttonRef = useRef();
 
-  //! funktioniert aber nicht gut und unvollständig
-  const handleClick = () => {
-    if (cart.filter((curr) => curr.id === product.id).length === 0) {
-      setCart([...cart, product]);
+  const addToCart = () => {
+    const productToAdd = cart.find((curr) => curr.id === product.id);
+    if (productToAdd) {
+      productToAdd.amount += 1;
+      setCart(
+        [...cart].filter((curr) => curr.id !== product.id),
+        { id: product.id, title: product.title, amount: productToAdd.amount }
+      );
     } else {
-      alert();
+      setCart([...cart], {
+        id: product.id,
+        title: product.title,
+        amount: 1,
+      });
     }
+
     buttonRef.current.style.background = "green";
     buttonRef.current.style.color = "white";
     buttonRef.current.innerText = "Added to Cart!";
@@ -23,7 +32,7 @@ const AddButton = ({ product }) => {
   };
 
   return (
-    <button ref={buttonRef} onClick={handleClick} className="add-button">
+    <button ref={buttonRef} onClick={addToCart} className="add-button">
       Add to Cart
     </button>
   );

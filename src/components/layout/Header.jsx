@@ -12,12 +12,14 @@ import Sidebar from "./Sidebar";
 import { useSidebarContext } from "../../contexts/SidebarContext";
 import { useAuthContext } from "../../contexts/AuthContext";
 import { useCartContext } from "../../contexts/CartContext";
+import { useEffect, useState } from "react";
+import { useResponsivityContext } from "../../contexts/ResponsivityContext";
 
 const Header = () => {
-  const { isSidebarOpened, handleSidebarClick, sidebarRef } =
-    useSidebarContext();
+  const { handleSidebarClick, sidebarRef } = useSidebarContext();
   const { isLoggedIn } = useAuthContext();
   const { cart } = useCartContext();
+  const { isMobile } = useResponsivityContext();
 
   return (
     <header>
@@ -28,13 +30,15 @@ const Header = () => {
           </Link>
         </div>
         <div className="nav-center">
-          <div className="nav-left">
-            <FontAwesomeIcon
-              onClick={handleSidebarClick}
-              className="menu-icon"
-              icon={faBars}
-            />
-          </div>
+          {isMobile ? (
+            <div className="nav-left">
+              <FontAwesomeIcon
+                onClick={handleSidebarClick}
+                className="menu-icon"
+                icon={faBars}
+              />
+            </div>
+          ) : null}
           <div className="nav-middle">
             <form className="search-form">
               <FontAwesomeIcon className="glas-icon" icon={faMagnifyingGlass} />
@@ -55,11 +59,14 @@ const Header = () => {
             </Link>
           </div>
         </div>
+        {}
       </nav>
-      <Sidebar
-        sidebarRef={sidebarRef}
-        handleSidebarClick={handleSidebarClick}
-      />
+      {isMobile ? (
+        <Sidebar
+          sidebarRef={sidebarRef}
+          handleSidebarClick={handleSidebarClick}
+        />
+      ) : null}
     </header>
   );
 };
