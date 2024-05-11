@@ -7,7 +7,11 @@ const AddButton = ({ product }) => {
 
   //! funktioniert aber nicht gut und unvollständig
   const handleClick = () => {
-    setCart([...cart, product]);
+    if (cart.filter((curr) => curr.id === product.id).length === 0) {
+      setCart([...cart, product]);
+    } else {
+      alert();
+    }
     buttonRef.current.style.background = "green";
     buttonRef.current.style.color = "white";
     buttonRef.current.innerText = "Added to Cart!";
