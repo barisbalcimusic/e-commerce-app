@@ -7,6 +7,9 @@
   .products {
     margin-top: 50px;
   }
+  .categories-div {
+    padding-top: 70px !important;
+  }
 }
 
 //tablet & desktop
@@ -20,11 +23,10 @@
     gap: 30px !important;
   }
   .categories {
-    grid-template-columns: repeat(6, 1fr) !important;
-    gap: 10px;
+    gap: 50px !important;
     .category-box {
-      width: 200px !important;
-      height: 200px !important;
+      width: 400px !important;
+      height: 400px !important;
     }
   }
 }
