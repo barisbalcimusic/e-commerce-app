@@ -12,14 +12,15 @@ import Sidebar from "./Sidebar";
 import { useSidebarContext } from "../../contexts/SidebarContext";
 import { useAuthContext } from "../../contexts/AuthContext";
 import { useCartContext } from "../../contexts/CartContext";
-import { useEffect, useState } from "react";
 import { useResponsivityContext } from "../../contexts/ResponsivityContext";
+import { useProductsContext } from "../../contexts/ProductsContext";
 
 const Header = () => {
   const { handleSidebarClick, sidebarRef } = useSidebarContext();
   const { isLoggedIn } = useAuthContext();
   const { cart } = useCartContext();
   const { isMobile } = useResponsivityContext();
+  const { categories } = useProductsContext();
 
   return (
     <header>
@@ -59,7 +60,17 @@ const Header = () => {
             </Link>
           </div>
         </div>
-        {}
+        {!isMobile ? (
+          <div className="nav-bottom">
+            <ul className="categories-bar">
+              {categories.map((category, index) => (
+                <li key={index}>
+                  <Link to={`/store/${category}`}>{category}</Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ) : null}
       </nav>
       {isMobile ? (
         <Sidebar

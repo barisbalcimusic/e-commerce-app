@@ -7,10 +7,18 @@ const ResponsivityContextProvider = ({ children }) => {
 
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth <= 431);
+      setIsMobile(window.innerWidth <= 1024);
     };
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
+  }, [isMobile]);
+
+  useEffect(() => {
+    const handleLoad = () => {
+      setIsMobile(window.innerWidth <= 1024);
+    };
+    window.addEventListener("load", handleLoad);
+    return () => window.removeEventListener("load", handleLoad);
   }, [isMobile]);
 
   return (

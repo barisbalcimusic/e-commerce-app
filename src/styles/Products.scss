@@ -1,8 +1,8 @@
 .products {
-  padding: 20px 0;
-  @include flex-row-centered;
-  flex-wrap: wrap;
+  @include flex-col-centered;
+  width: 100%;
   gap: 10px;
+  padding: 20px 0;
   a {
     color: black;
     text-decoration: none;
