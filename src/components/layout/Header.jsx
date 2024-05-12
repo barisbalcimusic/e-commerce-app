@@ -63,6 +63,9 @@ const Header = () => {
         {!isMobile ? (
           <div className="nav-bottom">
             <ul className="categories-bar">
+              <li>
+                <Link to="/store">All products</Link>
+              </li>
               {categories.map((category, index) => (
                 <li key={index}>
                   <Link to={`/store/${category}`}>{category}</Link>

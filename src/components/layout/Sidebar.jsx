@@ -14,6 +14,11 @@ const Sidebar = ({ sidebarRef, handleSidebarClick }) => {
         icon={faX}
       />
       <ul>
+        <li>
+          <Link to="/store" className="category all-products">
+            All products
+          </Link>
+        </li>
         {categories ? (
           categories.map((category, index) => (
             <li key={index}>

@@ -16,7 +16,6 @@
 
 .add-button {
   @include flex-row-centered;
-  max-width: 180px;
   font-weight: bold;
   padding: 10px 30px;
   background-color: $secondary;

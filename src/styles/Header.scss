@@ -1,7 +1,9 @@
 header {
   @include flex-col-centered;
+  position: relative;
+  box-sizing: border-box;
   width: 100%;
-  height: 15%;
+  height: 145px;
   padding: 20px 0px;
   min-height: 100px;
   background-color: $primary;
@@ -9,7 +11,7 @@ header {
     @include flex-col-centered;
     width: 100%;
     gap: 10px;
-    position: relative;
+    // position: relative;
     .nav-top {
       .logo {
         width: 50px;
@@ -102,12 +104,13 @@ header {
       @include flex-row-centered;
       background-color: $secondary;
       width: 100%;
-      margin-top: 10px;
+      position: absolute;
+      top: 145px;
       .categories-bar {
         @include flex-row-centered;
         gap: 0;
         margin: 0;
-        max-width: 900px;
+        max-width: 1000px;
         height: 50px;
         li {
           height: 100%;
@@ -133,7 +136,7 @@ aside {
   height: 100vh;
   background-color: $secondary;
   position: absolute;
-  top: 15%;
+  top: 145px;
   left: -100vw;
   transition: transform 0.3s 0s linear;
   .close-icon {
