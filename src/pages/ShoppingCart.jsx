@@ -7,6 +7,7 @@ const ShoppingCart = () => {
   const [total, setTotal] = useState(0);
 
   useEffect(() => {
+    //calculate total (price*amount)
     const totalPrice = cart.reduce(
       (acc, product) =>
         acc + parseInt(product.price) * parseInt(product.amount),

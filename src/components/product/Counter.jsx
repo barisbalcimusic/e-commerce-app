@@ -44,7 +44,7 @@ const Counter = ({ product }) => {
     <div className="counter">
       <button
         onClick={() => dispatch("decrement")}
-        disabled={state <= 0 ? true : false}
+        disabled={state <= 1 ? true : false}
       >
         -
       </button>
