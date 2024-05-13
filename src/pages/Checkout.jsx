@@ -1,10 +1,13 @@
 import { useEffect, useState } from "react";
 import { useCartContext } from "../contexts/CartContext";
-import { json } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const Checkout = () => {
-  const { total } = useCartContext();
+  const { cart, total } = useCartContext();
   const [formData, setFormData] = useState(null);
+  const [success, setSuccess] = useState(false);
+  const [count, setCount] = useState(3);
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (formData) {
@@ -17,6 +20,7 @@ const Checkout = () => {
             },
             body: JSON.stringify(formData),
           });
+          setSuccess(true);
         } catch (error) {
           console.log(error);
         }
@@ -25,38 +29,72 @@ const Checkout = () => {
     }
   }, [formData]);
 
+  //if success, show message and start countdown
+  let countdown;
+  useEffect(() => {
+    if (success) {
+      countdown = setInterval(() => {
+        setCount((count) => count - 1);
+      }, 1000);
+    }
+  }, [success]);
+
+  //when countdown ends, redirect to home
+  useEffect(() => {
+    if (count <= 0) {
+      clearInterval(countdown);
+      navigate("/");
+    }
+  }, [count]);
+
   const handleSubmit = (e) => {
     e.preventDefault();
-
+    const order = [];
+    cart.map((product) =>
+      order.push({ id: product.id, amount: product.amount })
+    );
     setFormData({
       adress1: e.target.children["adress"].value,
       addition: e.target.children["addition"].value,
       city: e.target.children["city"].value,
       postalCode: e.target.children["postalCode"].value,
       country: e.target.children["country"].value,
+      payment: e.target.children["payment"].value,
+      order: order,
     });
   };
 
   return (
     <div className="checkout" onSubmit={handleSubmit}>
-      <form>
-        <p>
-          <b>Total:</b> {total} $
+      {success ? (
+        <p className="order-success">
+          Success! Thank you for your order! You will be redirected in{" "}
+          <b>{count}</b> seconds.
         </p>
-        <h2>Shipping Adress</h2>
-        <input name="adress" type="text" placeholder="adress" />
-        <input name="addition" type="text" placeholder="adress (additional)" />
-        <input name="city" type="text" placeholder="city" />
-        <input name="postalCode" type="number" placeholder="postal code" />
-        <input name="country" type="text" placeholder="country" />
-        <h2>Payment method</h2>
-        <select name="" id="">
-          <option value="invoice" defaultValue>
-            Invoice
-          </option>
-        </select>
-        <button type="submit">Order</button>
-      </form>
+      ) : (
+        <form>
+          <p>
+            <b>Total:</b> {total} $
+          </p>
+          <h2>Shipping Adress</h2>
+          <input name="adress" type="text" placeholder="adress" />
+          <input
+            name="addition"
+            type="text"
+            placeholder="adress (additional)"
+          />
+          <input name="city" type="text" placeholder="city" />
+          <input name="postalCode" type="number" placeholder="postal code" />
+          <input name="country" type="text" placeholder="country" />
+          <h2>Payment method</h2>
+          <select name="payment">
+            <option value="invoice" defaultValue>
+              Invoice
+            </option>
+          </select>
+          <button type="submit">Order</button>
+        </form>
+      )}
     </div>
   );
 };
