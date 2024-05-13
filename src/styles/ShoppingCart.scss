@@ -1,0 +1,11 @@
+.shopping-cart {
+  @include flex-col-centered;
+  width: 100%;
+  height: calc(100vh - 145px);
+  .shopping-cart-table {
+    border: solid 1px black;
+    width: 100%;
+    max-width: 500px;
+    height: 500px;
+  }
+}
