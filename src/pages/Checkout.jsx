@@ -6,6 +6,8 @@ const Checkout = () => {
   const { cart, total } = useCartContext();
   const [formData, setFormData] = useState(null);
   const [success, setSuccess] = useState(false);
+  //empty the cart
+  const { setCart } = useCartContext();
   const [count, setCount] = useState(3);
   const navigate = useNavigate();
 
@@ -36,6 +38,7 @@ const Checkout = () => {
       countdown = setInterval(() => {
         setCount((count) => count - 1);
       }, 1000);
+      setCart([]);
     }
   }, [success]);
 
