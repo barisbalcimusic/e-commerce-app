@@ -24,14 +24,17 @@ const Counter = ({ product }) => {
 
   useEffect(() => {
     if (state) {
-      //find the current product in cart
-      const existingProduct = cart.find((curr) => curr.id === product.id);
-      //remove the current product from cart
-      const cartWithoutCurr = [
-        ...cart.filter((curr) => curr.id !== product.id),
-      ];
-      //update cart with the new amount of curren product
-      setCart([...cartWithoutCurr, { ...existingProduct, amount: state }]);
+      //find the index of the current product in cart
+      const existingProductIndex = cart.findIndex(
+        (curr) => curr.id === product.id
+      );
+      const updatedCart = [...cart];
+      //update the amount of the current product
+      updatedCart[existingProductIndex] = {
+        ...updatedCart[existingProductIndex],
+        amount: state,
+      };
+      setCart(updatedCart);
     }
   }, [state]);
 
