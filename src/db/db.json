@@ -47,7 +47,6 @@
         "https://cdn.dummyjson.com/product-images/1/4.jpg",
         "https://cdn.dummyjson.com/product-images/1/thumbnail.jpg"
       ],
-      "enterDate": "10.02.2013",
       "soldAmount": 123
     },
     {
@@ -67,7 +66,6 @@
         "https://cdn.dummyjson.com/product-images/2/3.jpg",
         "https://cdn.dummyjson.com/product-images/2/thumbnail.jpg"
       ],
-      "enterDate": "10.01.2024",
       "soldAmount": 214
     },
     {
@@ -82,7 +80,6 @@
       "category": "smartphones",
       "thumbnail": "https://cdn.dummyjson.com/product-images/3/thumbnail.jpg",
       "images": ["https://cdn.dummyjson.com/product-images/3/1.jpg"],
-      "enterDate": "01.20.2022",
       "soldAmount": 40
     },
     {
@@ -103,7 +100,6 @@
         "https://cdn.dummyjson.com/product-images/4/4.jpg",
         "https://cdn.dummyjson.com/product-images/4/thumbnail.jpg"
       ],
-      "enterDate": "10.08.2013",
       "soldAmount": 124
     },
     {
@@ -122,7 +118,6 @@
         "https://cdn.dummyjson.com/product-images/5/2.jpg",
         "https://cdn.dummyjson.com/product-images/5/3.jpg"
       ],
-      "enterDate": "10.09.2013",
       "soldAmount": 100
     },
     {
@@ -142,7 +137,6 @@
         "https://cdn.dummyjson.com/product-images/6/3.png",
         "https://cdn.dummyjson.com/product-images/6/4.jpg"
       ],
-      "enterDate": "10.09.2021",
       "soldAmount": 444
     },
     {
@@ -162,7 +156,6 @@
         "https://cdn.dummyjson.com/product-images/7/3.jpg",
         "https://cdn.dummyjson.com/product-images/7/thumbnail.jpg"
       ],
-      "enterDate": "10.11.2022",
       "soldAmount": 22
     },
     {
@@ -183,7 +176,6 @@
         "https://cdn.dummyjson.com/product-images/8/4.jpg",
         "https://cdn.dummyjson.com/product-images/8/thumbnail.jpg"
       ],
-      "enterDate": "10.05.2015",
       "soldAmount": 707
     },
     {
@@ -204,8 +196,7 @@
         "https://cdn.dummyjson.com/product-images/9/4.jpg",
         "https://cdn.dummyjson.com/product-images/9/thumbnail.jpg"
       ],
-      "enterDate": "10.04.2024",
-      "soldAmount": 30
+      "soldAmount": 3220
     },
     {
       "id": "10",
@@ -224,7 +215,6 @@
         "https://cdn.dummyjson.com/product-images/10/3.jpg",
         "https://cdn.dummyjson.com/product-images/10/thumbnail.jpeg"
       ],
-      "enterDate": "10.09.2013",
       "soldAmount": 444
     },
     {
@@ -244,7 +234,6 @@
         "https://cdn.dummyjson.com/product-images/11/3.jpg",
         "https://cdn.dummyjson.com/product-images/11/thumbnail.jpg"
       ],
-      "enterDate": "10.09.2013",
       "soldAmount": 235
     },
     {
@@ -265,8 +254,7 @@
         "https://cdn.dummyjson.com/product-images/12/4.jpg",
         "https://cdn.dummyjson.com/product-images/12/thumbnail.jpg"
       ],
-      "enterDate": "10.09.2013",
-      "soldAmount": 256
+      "soldAmount": 21
     },
     {
       "id": "13",
@@ -286,7 +274,6 @@
         "https://cdn.dummyjson.com/product-images/13/4.jpg",
         "https://cdn.dummyjson.com/product-images/13/thumbnail.webp"
       ],
-      "enterDate": "10.07.2020",
       "soldAmount": 35
     },
     {
@@ -306,7 +293,6 @@
         "https://cdn.dummyjson.com/product-images/14/3.jpg",
         "https://cdn.dummyjson.com/product-images/14/thumbnail.jpg"
       ],
-      "enterDate": "10.07.2020",
       "soldAmount": 244
     },
     {
@@ -327,7 +313,6 @@
         "https://cdn.dummyjson.com/product-images/15/4.jpg",
         "https://cdn.dummyjson.com/product-images/15/thumbnail.jpg"
       ],
-      "enterDate": "10.07.2020",
       "soldAmount": 123
     },
     {
@@ -348,7 +333,6 @@
         "https://cdn.dummyjson.com/product-images/16/4.jpg",
         "https://cdn.dummyjson.com/product-images/16/thumbnail.jpg"
       ],
-      "enterDate": "10.07.2020",
       "soldAmount": 55
     },
     {
@@ -368,7 +352,6 @@
         "https://cdn.dummyjson.com/product-images/17/3.jpg",
         "https://cdn.dummyjson.com/product-images/17/thumbnail.jpg"
       ],
-      "enterDate": "10.07.2020",
       "soldAmount": 66
     },
     {
@@ -389,7 +372,6 @@
         "https://cdn.dummyjson.com/product-images/18/4.jpg",
         "https://cdn.dummyjson.com/product-images/18/thumbnail.jpg"
       ],
-      "enterDate": "10.07.2021",
       "soldAmount": 111
     },
     {
@@ -409,7 +391,6 @@
         "https://cdn.dummyjson.com/product-images/19/3.png",
         "https://cdn.dummyjson.com/product-images/19/thumbnail.jpg"
       ],
-      "enterDate": "10.07.2020",
       "soldAmount": 352
     },
     {
@@ -430,7 +411,6 @@
         "https://cdn.dummyjson.com/product-images/20/4.jpg",
         "https://cdn.dummyjson.com/product-images/20/thumbnail.jpg"
       ],
-      "enterDate": "10.07.2000",
       "soldAmount": 1111
     },
     {
@@ -449,7 +429,6 @@
         "https://cdn.dummyjson.com/product-images/21/2.jpg",
         "https://cdn.dummyjson.com/product-images/21/3.jpg"
       ],
-      "enterDate": "10.07.2020",
       "soldAmount": 353
     },
     {
@@ -468,7 +447,6 @@
         "https://cdn.dummyjson.com/product-images/22/2.jpg",
         "https://cdn.dummyjson.com/product-images/22/3.jpg"
       ],
-      "enterDate": "10.07.2020",
       "soldAmount": 351
     },
     {
@@ -489,7 +467,6 @@
         "https://cdn.dummyjson.com/product-images/23/4.jpg",
         "https://cdn.dummyjson.com/product-images/23/thumbnail.jpg"
       ],
-      "enterDate": "10.07.2020",
       "soldAmount": 3522
     },
     {
@@ -510,7 +487,6 @@
         "https://cdn.dummyjson.com/product-images/24/4.jpg",
         "https://cdn.dummyjson.com/product-images/24/thumbnail.jpg"
       ],
-      "enterDate": "10.07.2019",
       "soldAmount": 35
     },
     {
@@ -531,7 +507,6 @@
         "https://cdn.dummyjson.com/product-images/25/4.jpg",
         "https://cdn.dummyjson.com/product-images/25/thumbnail.jpg"
       ],
-      "enterDate": "10.07.2020",
       "soldAmount": 352
     },
     {
@@ -553,7 +528,6 @@
         "https://cdn.dummyjson.com/product-images/26/5.jpg",
         "https://cdn.dummyjson.com/product-images/26/thumbnail.jpg"
       ],
-      "enterDate": "10.07.2018",
       "soldAmount": 351
     },
     {
@@ -574,7 +548,6 @@
         "https://cdn.dummyjson.com/product-images/27/4.jpg",
         "https://cdn.dummyjson.com/product-images/27/thumbnail.webp"
       ],
-      "enterDate": "10.07.2020",
       "soldAmount": 400
     },
     {
@@ -595,7 +568,6 @@
         "https://cdn.dummyjson.com/product-images/28/4.jpg",
         "https://cdn.dummyjson.com/product-images/28/thumbnail.jpg"
       ],
-      "enterDate": "10.07.2023",
       "soldAmount": 222
     },
     {
@@ -616,7 +588,6 @@
         "https://cdn.dummyjson.com/product-images/29/4.webp",
         "https://cdn.dummyjson.com/product-images/29/thumbnail.webp"
       ],
-      "enterDate": "10.07.2020",
       "soldAmount": 222
     },
     {
@@ -636,7 +607,6 @@
         "https://cdn.dummyjson.com/product-images/30/3.jpg",
         "https://cdn.dummyjson.com/product-images/30/thumbnail.jpg"
       ],
-      "enterDate": "10.08.2017",
       "soldAmount": 3225
     }
   ]

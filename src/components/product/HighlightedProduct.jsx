@@ -1,10 +1,8 @@
 import { Link } from "react-router-dom";
 
-const BestRatedProduct = ({ product }) => {
+const HighlightedProduct = ({ product }) => {
   return (
-    <Link
-      to={`store/product-detail/${product.id}`}
-      className="best-rated-product">
+    <Link to={`store/product-detail/${product.id}`} className="highlight">
       <img src={product.thumbnail} />
       <p className="title">{product.title}</p>
       <p>
@@ -14,4 +12,4 @@ const BestRatedProduct = ({ product }) => {
   );
 };
 
-export default BestRatedProduct;
+export default HighlightedProduct;

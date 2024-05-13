@@ -49,18 +49,18 @@
       }
     }
   }
-  .best-rating-div {
+  .highlights-div {
     @include flex-col-spaced;
     padding: 0 10px;
     h2 {
       text-align: center;
       margin: 10px;
     }
-    .best-rated-products {
+    .highlights {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 10px;
-      .best-rated-product {
+      .highlight {
         * {
           margin: 0;
         }
