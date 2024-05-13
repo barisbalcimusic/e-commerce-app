@@ -45,7 +45,7 @@ const ShoppingCart = () => {
               <ProductInCart key={product.id} product={product} />
             ))}
             <tr>
-              <td colSpan={3}>
+              <td className="total-td" colSpan={3}>
                 <b>Total: </b>
                 {total}$
               </td>
@@ -55,7 +55,11 @@ const ShoppingCart = () => {
       ) : (
         <p>Your cart is empty.</p>
       )}
-      {cart.length > 0 && <button onClick={handleOrder}>Order</button>}
+      {cart.length > 0 && (
+        <button className="add-button" onClick={handleOrder}>
+          Order
+        </button>
+      )}
       {warning && (
         <p>
           You have to <Link to={"/auth"}>login</Link> or{" "}

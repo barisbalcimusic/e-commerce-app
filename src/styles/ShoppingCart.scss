@@ -8,17 +8,34 @@
   }
   table {
     border: solid 1px black;
-    width: 100%;
+    width: 90%;
     max-width: 500px;
     border: 1px solid black;
     border-collapse: collapse;
+    button {
+      border: solid 1px gray;
+      border-radius: 5px;
+      background-color: white;
+      box-shadow: 0px 0px 4px 0px lightgray;
+      padding: 4px 8px;
+    }
     th,
     td {
       border: 1px solid black;
       border-collapse: collapse;
     }
+    th {
+      background-color: orange;
+    }
     .price-td {
       text-align: center;
+    }
+    .title-td {
+      padding-left: 5px;
+    }
+    .total-td {
+      background-color: orange;
+      padding-left: 5px;
     }
   }
 }
