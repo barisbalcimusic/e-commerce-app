@@ -1,6 +1,7 @@
 .products {
   @include flex-col-centered;
   width: 100%;
+  min-height: calc(100vh - 145px);
   gap: 15px;
   padding: 20px;
   a {

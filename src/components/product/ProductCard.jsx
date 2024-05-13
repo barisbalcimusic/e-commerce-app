@@ -10,7 +10,7 @@ const ProductCardVer = ({ product }) => {
       </div>
       <div className="product-info">
         <p>
-          {product.description.slice(0, 75)}...
+          {product.description.slice(0, 40)}...
           <Link className="details" to={`/store/product-detail/${product.id}`}>
             details
           </Link>

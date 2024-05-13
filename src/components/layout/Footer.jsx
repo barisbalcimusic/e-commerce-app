@@ -1,39 +1,42 @@
-import styled from "styled-components";
+import { Link } from "react-router-dom";
 import "../../App.scss";
-
-const FOOTER = styled.footer`
-  width: 100%;
-  height: 30%;
-  min-height: 200px;
-  background-color: orange;
-  font-weight: bold;
-  ul {
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    li {
-      font-weight: bold;
-    }
-  }
-`;
 
 const Footer = () => {
   return (
-    <FOOTER>
+    <footer>
       <ul>
-        <li>Help Centre</li>
-        <li>Contact Us</li>
-        <li>Shipping Costs and Delivery Times</li>
-        <li>Jobs & Careers</li>
-        <li>Terms & Conditions / Imprint</li>
-        <li>Privacy Policy</li>
-        <li>Cookie Settings</li>
-        <li>About Us</li>
-        <li>Jobs & Careers</li>
-        <li>Terms & Conditions / Imprint</li>
+        <li>
+          <Link to="/">Home</Link>
+        </li>
+        <li>
+          <Link to="/">Products</Link>
+        </li>
+        <li>
+          <Link to="/">About Us</Link>
+        </li>
+        <li>
+          <Link to="/">Contact</Link>
+        </li>
+        <li>
+          <Link to="/">Privacy Policy</Link>
+        </li>
+        <li>
+          <Link to="/">Terms of Use</Link>
+        </li>
       </ul>
-    </FOOTER>
+      <div className="contact">
+        <p>123 Main Street, Anytown, USA</p>
+        <p>
+          <span>Phone:</span> 123-456-7890
+        </p>
+        <p>
+          <span>Email:</span> info@buytheway.com
+        </p>
+      </div>
+      <p>
+        <em>© 2024 BuyTheWay Online Store. All rights reserved.</em>
+      </p>
+    </footer>
   );
 };
 

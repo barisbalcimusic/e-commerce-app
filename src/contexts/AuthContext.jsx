@@ -6,7 +6,7 @@ const AuthContextProvider = ({ children }) => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   return (
-    <authContext.Provider value={{ setIsLoggedIn }}>
+    <authContext.Provider value={{ isLoggedIn, setIsLoggedIn }}>
       {children}
     </authContext.Provider>
   );
