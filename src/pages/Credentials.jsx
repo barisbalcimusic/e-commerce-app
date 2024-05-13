@@ -46,38 +46,40 @@ const Credentials = () => {
         </p>
       ) : (
         <>
-          <h2>Welcome</h2>
           <div className="selecting-div">
-            <div className="sign-up-div">
-              <div className="radio-div">
-                <input
-                  type="radio"
-                  id="sign-up"
-                  name="authorisation"
-                  onFocus={handleFocus}
-                />
-                <label htmlFor="sign-up">Sign-up</label>
+            <div className="selecting-container">
+              <div className="sign-up-div">
+                <h2>Welcome</h2>
+                <div className="radio-div">
+                  <input
+                    type="radio"
+                    id="sign-up"
+                    name="authorisation"
+                    onFocus={handleFocus}
+                  />
+                  <label htmlFor="sign-up">Sign-up</label>
+                </div>
+                {selection === "sign-up" ? (
+                  <RegistrationForm
+                    setRegistrationSuccess={setRegistrationSuccess}
+                  />
+                ) : null}
               </div>
-              {selection === "sign-up" ? (
-                <RegistrationForm
-                  setRegistrationSuccess={setRegistrationSuccess}
-                />
-              ) : null}
-            </div>
-            <div className="log-in-div">
-              <div className="radio-div">
-                <input
-                  type="radio"
-                  id="log-in"
-                  name="authorisation"
-                  onFocus={handleFocus}
-                  defaultChecked
-                />
-                <label htmlFor="log-in">Log-in</label>
+              <div className="log-in-div">
+                <div className="radio-div">
+                  <input
+                    type="radio"
+                    id="log-in"
+                    name="authorisation"
+                    onFocus={handleFocus}
+                    defaultChecked
+                  />
+                  <label htmlFor="log-in">Log-in</label>
+                </div>
+                {!selection || selection === "log-in" ? (
+                  <LoginForm setLoginSuccess={setLoginSuccess} />
+                ) : null}
               </div>
-              {!selection || selection === "log-in" ? (
-                <LoginForm setLoginSuccess={setLoginSuccess} />
-              ) : null}
             </div>
           </div>
         </>
