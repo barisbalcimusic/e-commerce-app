@@ -12,6 +12,7 @@ import UserAccount from "./pages/UserAccount";
 import ShoppingCart from "./pages/ShoppingCart";
 import CartContextProvider from "./contexts/CartContext";
 import ResponsivityContextProvider from "./contexts/ResponsivityContext";
+import Checkout from "./pages/Checkout";
 
 const App = () => {
   return (
@@ -32,6 +33,7 @@ const App = () => {
                   <Route path="/auth" element={<Credentials />} />
                   <Route path="/user" element={<UserAccount />} />
                   <Route path="/cart" element={<ShoppingCart />} />
+                  <Route path="/checkout" element={<Checkout />} />
                 </Routes>
               </Layout>
             </ResponsivityContextProvider>

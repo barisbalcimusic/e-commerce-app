@@ -1,10 +1,14 @@
 import { useEffect, useState } from "react";
 import ProductInCart from "../components/product/ProductInCart";
 import { useCartContext } from "../contexts/CartContext";
+import { useAuthContext } from "../contexts/AuthContext";
+import { Link, useNavigate } from "react-router-dom";
 
 const ShoppingCart = () => {
-  const { cart } = useCartContext();
-  const [total, setTotal] = useState(0);
+  const { cart, total, setTotal } = useCartContext();
+  const { isLoggedIn } = useAuthContext();
+  const [warning, setWarning] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     //calculate total (price*amount)
@@ -15,6 +19,14 @@ const ShoppingCart = () => {
     );
     setTotal(totalPrice);
   }, [cart]);
+
+  const handleOrder = () => {
+    if (isLoggedIn) {
+      navigate("/checkout");
+    } else {
+      setWarning(true);
+    }
+  };
 
   return (
     <div className="shopping-cart">
@@ -43,7 +55,13 @@ const ShoppingCart = () => {
       ) : (
         <p>Your cart is empty.</p>
       )}
-      {cart.length > 0 && <button>Order</button>}
+      {cart.length > 0 && <button onClick={handleOrder}>Order</button>}
+      {warning && (
+        <p>
+          You have to <Link to={"/auth"}>login</Link> or{" "}
+          <Link to={"/auth"}>register</Link> to continue{" "}
+        </p>
+      )}
     </div>
   );
 };
