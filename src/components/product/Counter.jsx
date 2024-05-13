@@ -13,24 +13,25 @@ const Counter = ({ product }) => {
       case "reset":
         return initialValue;
       default:
-        state;
+        return state;
     }
   };
 
-  //set amount of product in cart as initial value
+  //set amount of the current product as initial value
   const initialValue = cart.find((curr) => curr.id === product.id).amount;
 
   const [state, dispatch] = useReducer(reducer, initialValue);
 
   useEffect(() => {
     if (state) {
+      //find the current product in cart
       const existingProduct = cart.find((curr) => curr.id === product.id);
-      const lastAmount = parseInt(existingProduct.amount);
-      setCart([
+      //remove the current product from cart
+      const cartWithoutCurr = [
         ...cart.filter((curr) => curr.id !== product.id),
-        { ...existingProduct, amount: state },
-      ]);
-      console.log(state);
+      ];
+      //update cart with the new amount of curren product
+      setCart([...cartWithoutCurr, { ...existingProduct, amount: state }]);
     }
   }, [state]);
 

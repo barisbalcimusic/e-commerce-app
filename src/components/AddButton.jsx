@@ -5,7 +5,7 @@ import styled from "styled-components";
 const BUTTON = styled.button`
   display:flex;
   justify-content:center;
-  alignt-items:center;
+  align-items:center;
   font-weight: bold;
   padding: 10px 30px;
   background-color: orange;
@@ -29,7 +29,9 @@ const AddButton = ({ product }) => {
       productToAdd = { ...product, amount: 1 };
       setCart([...cart, productToAdd]);
     } else {
+      //find the product in cart
       const existingProduct = cart.find((curr) => curr.id === product.id);
+      //get the amount of the product
       const lastAmount = parseInt(existingProduct.amount);
       setCart([
         ...cart.filter((curr) => curr.id !== product.id),

@@ -4,7 +4,7 @@ const ProductInCart = ({ product }) => {
   return (
     <tr>
       <td>{product.title}</td>
-      <td>{product.price}$</td>
+      <td className="price-td">{product.price} $</td>
       <td>
         <Counter product={product} />
       </td>
