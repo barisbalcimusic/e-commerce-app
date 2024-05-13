@@ -11,7 +11,6 @@ header {
     @include flex-col-centered;
     width: 100%;
     gap: 10px;
-    // position: relative;
     .nav-top {
       .logo {
         width: 50px;
@@ -127,40 +126,6 @@ header {
           }
         }
       }
-    }
-  }
-}
-
-aside {
-  width: 100vw;
-  height: 100vh;
-  background-color: $secondary;
-  position: absolute;
-  top: 145px;
-  left: -100vw;
-  transition: transform 0.3s 0s linear;
-  .close-icon {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    font-size: 35px;
-  }
-  ul {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    font-weight: bold;
-    li {
-      width: 100%;
-      height: 50px;
-      // background-color: red;
-      padding: 0 20px;
-      display: flex;
-      align-items: center;
-    }
-    .category {
-      color: black;
-      font-size: 20px;
     }
   }
 }

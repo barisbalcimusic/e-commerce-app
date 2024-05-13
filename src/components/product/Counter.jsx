@@ -1,5 +1,13 @@
 import { useReducer } from "react";
 import { useCartContext } from "../../contexts/CartContext";
+import styled from "styled-components";
+
+const DIV = styled.div`
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap: 10px;
+}`;
 
 const initialValue = 0;
 
@@ -18,7 +26,6 @@ const reducer = (state, action) => {
 
 const Counter = ({ product }) => {
   const [state, dispatch] = useReducer(reducer, initialValue);
-
   const { cart, setCart } = useCartContext();
 
   const handleReset = () => {
@@ -27,7 +34,7 @@ const Counter = ({ product }) => {
   };
 
   return (
-    <div className="counter">
+    <DIV className="counter">
       <button
         onClick={() => dispatch("decrement")}
         disabled={state <= 0 ? true : false}>
@@ -36,7 +43,7 @@ const Counter = ({ product }) => {
       <p>{state}</p>
       <button onClick={() => dispatch("increment")}>+</button>
       <button onClick={handleReset}>Delete</button>
-    </div>
+    </DIV>
   );
 };
 

@@ -1,5 +1,10 @@
+import styled from "styled-components";
 import ProductInCart from "../components/product/ProductInCart";
 import { useCartContext } from "../contexts/CartContext";
+
+const TABLE = styled.table`
+  border: solid black 1px;
+`;
 
 const ShoppingCart = () => {
   const { cart } = useCartContext();
@@ -7,7 +12,7 @@ const ShoppingCart = () => {
   return (
     <>
       <h1>Shopping Cart</h1>
-      <table className="shopping-cart">
+      <TABLE className="shopping-cart">
         <thead>
           <tr>
             <th>Title</th>
@@ -20,7 +25,7 @@ const ShoppingCart = () => {
             <ProductInCart key={product.id} product={product} />
           ))}
         </tbody>
-      </table>
+      </TABLE>
       <button>Order</button>
     </>
   );

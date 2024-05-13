@@ -1,8 +1,26 @@
+import styled from "styled-components";
 import "../../App.scss";
+
+const FOOTER = styled.footer`
+  width: 100%;
+  height: 30%;
+  min-height: 200px;
+  background-color: orange;
+  font-weight: bold;
+  ul {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    li {
+      font-weight: bold;
+    }
+  }
+`;
 
 const Footer = () => {
   return (
-    <footer>
+    <FOOTER>
       <ul>
         <li>Help Centre</li>
         <li>Contact Us</li>
@@ -15,7 +33,7 @@ const Footer = () => {
         <li>Jobs & Careers</li>
         <li>Terms & Conditions / Imprint</li>
       </ul>
-    </footer>
+    </FOOTER>
   );
 };
 

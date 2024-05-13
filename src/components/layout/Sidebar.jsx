@@ -2,39 +2,72 @@ import { faX } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useProductsContext } from "../../contexts/ProductsContext";
 import { Link } from "react-router-dom";
+import styled from "styled-components";
+
+const ASIDE = styled.aside`
+  width: 100vw;
+  height: 100vh;
+  background-color: orange;
+  position: absolute;
+  top: 145px;
+  left: -100vw;
+  transition: transform 0.3s 0s linear;
+`;
+const UL = styled.ul`
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  font-weight: bold;
+`;
+const LI = styled.li`
+  width: 100%;
+  height: 50px;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+`;
+const iconStyle = {
+  position: "absolute",
+  top: "10px",
+  right: "10px",
+  fontSize: "35px",
+};
+const categoryStyle = {
+  color: "black",
+};
 
 const Sidebar = ({ sidebarRef, handleSidebarClick }) => {
   const { categories } = useProductsContext();
 
   return (
-    <aside ref={sidebarRef}>
+    <ASIDE ref={sidebarRef}>
       <FontAwesomeIcon
         onClick={() => handleSidebarClick()}
-        className="close-icon"
+        style={iconStyle}
         icon={faX}
       />
-      <ul>
-        <li>
+      <UL>
+        <LI>
           <Link to="/store" className="category all-products">
             All products
           </Link>
-        </li>
+        </LI>
         {categories ? (
           categories.map((category, index) => (
-            <li key={index}>
+            <LI key={index}>
               <Link
                 onClick={() => handleSidebarClick()}
-                className="category"
+                style={categoryStyle}
                 to={`/store/${category}`}>
                 {category}
               </Link>
-            </li>
+            </LI>
           ))
         ) : (
           <p>Loading...</p>
         )}
-      </ul>
-    </aside>
+      </UL>
+    </ASIDE>
   );
 };
 

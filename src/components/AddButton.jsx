@@ -1,5 +1,23 @@
 import { useEffect, useRef } from "react";
 import { useCartContext } from "../contexts/CartContext";
+import styled from "styled-components";
+
+const BUTTON = styled.button`
+  display:flex;
+  justify-content:center;
+  alignt-items:center;
+  font-weight: bold;
+  padding: 10px 30px;
+  background-color: orange;
+  border: none;
+  border-radius: 20px;
+  transition: background-color 0.5s 0s linear, color 0.5s 0s linear;
+  &:hover {
+    cursor: pointer;
+    background-color:red;
+  }
+}
+`;
 
 const AddButton = ({ product }) => {
   const { cart, setCart } = useCartContext();
@@ -24,17 +42,12 @@ const AddButton = ({ product }) => {
     buttonRef.current.style.background = "green";
     buttonRef.current.style.color = "white";
     buttonRef.current.innerText = "Added to Cart!";
-    // setTimeout(() => {
-    //   buttonRef.current.style.background = "#f79824";
-    //   buttonRef.current.style.color = "black";
-    //   buttonRef.current.innerText = "Add to Cart";
-    // }, 3000);
   };
 
   return (
-    <button ref={buttonRef} onClick={addToCart} className="add-button">
+    <BUTTON ref={buttonRef} onClick={addToCart} className="add-button">
       Add to Cart
-    </button>
+    </BUTTON>
   );
 };
 
