@@ -8,8 +8,8 @@ const Category = ({ category, products }) => {
   return (
     <Link className="category-box" to={`/store/${category}`}>
       <div className="category-name">{category}</div>
-      {productsFromCategory.map((product) => (
-        <div className="category-img-div">
+      {productsFromCategory.map((product, index) => (
+        <div key={index} className="category-img-div">
           <img className="category-image" src={product.thumbnail} />
         </div>
       ))}

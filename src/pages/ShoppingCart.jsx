@@ -7,7 +7,7 @@ const ShoppingCart = () => {
   return (
     <div className="shopping-cart">
       <h1>Shopping Cart</h1>
-      {cart.length > 1 ? (
+      {cart.length > 0 ? (
         <table className="shopping-cart-table">
           <thead>
             <tr>

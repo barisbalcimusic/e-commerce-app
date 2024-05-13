@@ -25,13 +25,15 @@ const Footer = () => {
         </li>
       </ul>
       <div className="contact">
-        <p>123 Main Street, Anytown, USA</p>
-        <p>
-          <span>Phone:</span> 123-456-7890
-        </p>
-        <p>
-          <span>Email:</span> info@buytheway.com
-        </p>
+        <p>23 Oak Street, Springfield, IL, 62701, USA</p>
+        <div>
+          <p>
+            <span>Phone:</span> 123-456-7890
+          </p>
+          <p>
+            <span>Email:</span> info@buytheway.com
+          </p>
+        </div>
       </div>
       <p>
         <em>© 2024 BuyTheWay Online Store. All rights reserved.</em>

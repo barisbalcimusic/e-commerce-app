@@ -24,21 +24,18 @@ const AddButton = ({ product }) => {
   const buttonRef = useRef();
 
   const addToCart = () => {
-    const productToAdd = cart.find((curr) => curr.id === product.id);
-    if (productToAdd) {
-      productToAdd.amount += 1;
-      setCart(
-        [...cart].filter((curr) => curr.id !== product.id),
-        { id: product.id, title: product.title, amount: productToAdd.amount }
-      );
+    let productToAdd;
+    if (!cart.find((curr) => curr.id === product.id)) {
+      productToAdd = { ...product, amount: 1 };
+      setCart([...cart, productToAdd]);
     } else {
-      setCart([...cart], {
-        id: product.id,
-        title: product.title,
-        amount: 1,
-      });
+      const existingProduct = cart.find((curr) => curr.id === product.id);
+      const lastAmount = parseInt(existingProduct.amount);
+      setCart([
+        ...cart.filter((curr) => curr.id !== product.id),
+        { ...existingProduct, amount: lastAmount + 1 },
+      ]);
     }
-
     buttonRef.current.style.background = "green";
     buttonRef.current.style.color = "white";
     buttonRef.current.innerText = "Added to Cart!";

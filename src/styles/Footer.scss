@@ -21,7 +21,15 @@ footer {
       font-weight: bold;
       a {
         color: black;
+        &:hover {
+          color: red;
+        }
       }
     }
+  }
+  .contact {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
   }
 }
