@@ -3,10 +3,8 @@
   width: 100%;
   min-height: calc(100vh - 145px);
   .products-div {
-    @include flex-row-centered;
-    flex-wrap: wrap;
-    width: 90%;
-    max-width: 1200px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
     gap: 30px;
     padding: 30px;
   }

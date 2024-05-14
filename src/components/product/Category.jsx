@@ -1,6 +1,9 @@
 import { Link } from "react-router-dom";
+import { useResponsivityContext } from "../../contexts/ResponsivityContext";
 
 const Category = ({ category, products }) => {
+  const { isMobile } = useResponsivityContext();
+
   const productsFromCategory = products
     .filter((curr) => curr.category === category)
     .slice(0, 3);
@@ -8,11 +11,12 @@ const Category = ({ category, products }) => {
   return (
     <Link className="category-box" to={`/store/${category}`}>
       <div className="category-name">{category}</div>
-      {productsFromCategory.map((product, index) => (
-        <div key={index} className="category-img-div">
-          <img className="category-image" src={product.thumbnail} />
-        </div>
-      ))}
+      {!isMobile &&
+        productsFromCategory.map((product, index) => (
+          <div key={index} className="category-img-div">
+            <img className="category-image" src={product.thumbnail} />
+          </div>
+        ))}
     </Link>
   );
 };

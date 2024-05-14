@@ -35,8 +35,8 @@ const Footer = () => {
           </p>
         </div>
       </div>
-      <p>
-        <em>© 2024 BuyTheWay Online Store. All rights reserved.</em>
+      <p className="copyright">
+        © 2024 BuyTheWay Online Store. All rights reserved.
       </p>
     </footer>
   );

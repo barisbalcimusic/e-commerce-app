@@ -36,12 +36,12 @@ const Credentials = () => {
   return (
     <div className="credentials">
       {registrationSuccess ? (
-        <p>
+        <p className="success">
           Succesfull registered! You will be redirected in <b>{count}</b>{" "}
           seconds.
         </p>
       ) : loginSuccess ? (
-        <p>
+        <p className="success">
           Login successfull! You will be redirected in <b>{count}</b> seconds.
         </p>
       ) : (
