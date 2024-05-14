@@ -20,7 +20,7 @@ const UserAccount = () => {
   return (
     <div className="user-account-container">
       <h2>Welcome {loggedUser && loggedUser.firstname}!</h2>
-      <button onClick={handleClick} className="sign-out">
+      <button onClick={handleClick} className="button-style ">
         Sign out
       </button>
       <div className="user-settings">

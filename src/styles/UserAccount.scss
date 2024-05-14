@@ -6,15 +6,6 @@
   h2 {
     margin: 0;
   }
-  .sign-out {
-    border: none;
-    padding: 10px;
-    background-color: $secondary;
-    &:hover {
-      background-color: $hover;
-      cursor: pointer;
-    }
-  }
   .user-settings {
     width: 80%;
     max-width: 400px;
@@ -28,7 +19,7 @@
       padding: 20px;
       font-weight: bold;
       &:hover {
-        background-color: $secondary;
+        background-color: $hover;
         cursor: pointer;
       }
     }

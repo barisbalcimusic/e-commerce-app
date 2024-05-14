@@ -1,3 +1,5 @@
+@import "./_variables";
+
 //grid
 @media (min-width: 1434) {
   .highlights,
@@ -48,6 +50,7 @@
   .category-name {
     width: 50% !important;
     height: 50% !important;
+    background-color: $primary !important;
   }
   .credentials,
   .user-account-container,
