@@ -21,3 +21,15 @@
   @include flex-row-centered;
   width: 100%;
 }
+
+.button-style {
+  font-weight: bold;
+  border: none;
+  background-color: orange;
+  padding: 10px 20px !important;
+  border-radius: 10px;
+  &:hover {
+    background-color: red;
+    cursor: pointer;
+  }
+}

@@ -18,26 +18,33 @@ const ProductDetail = () => {
       <p className="title">{filteredProduct.title}</p>
       <img src={filteredProduct.thumbnail} alt="product-picture" />
       <p>{filteredProduct.description}</p>
-      {/* <p className="price">{filteredProduct.price} $</p> */}
-      <p
-        className={
-          filteredProduct.discountPercentage > 0 ? "old-price" : "price"
-        }
-      >
-        {filteredProduct.price} ${" "}
+      <p>
+        <b>Rating: </b>
+        {filteredProduct.rating}
       </p>
-      {filteredProduct.discountPercentage > 0 && (
-        <p className="new-price">
-          {
-            //calculate discounted price
-            (
-              filteredProduct.price -
-              filteredProduct.price * (filteredProduct.discountPercentage / 100)
-            ).toFixed(2)
-          }{" "}
-          $
+      <div className="price-info">
+        {" "}
+        <p
+          className={
+            filteredProduct.discountPercentage > 0 ? "old-price" : "price"
+          }
+        >
+          {filteredProduct.price} ${" "}
         </p>
-      )}
+        {filteredProduct.discountPercentage > 0 && (
+          <p className="new-price">
+            {
+              //calculate discounted price
+              (
+                filteredProduct.price -
+                filteredProduct.price *
+                  (filteredProduct.discountPercentage / 100)
+              ).toFixed(2)
+            }{" "}
+            $
+          </p>
+        )}
+      </div>
       <AddButton product={filteredProduct} />
     </div>
   ) : (

@@ -2,7 +2,8 @@
   @include flex-col-centered;
   gap: 30px;
   width: 100%;
-  height: calc(100vh - 145px);
+  min-height: calc(100vh - 145px);
+  margin: 20px 0;
   h1 {
     margin: 0;
   }
@@ -36,6 +37,16 @@
     .total-td {
       background-color: orange;
       padding-left: 5px;
+    }
+  }
+  .warning {
+    a {
+      color: blue;
+      text-decoration: none;
+      font-weight: bold;
+      &:hover {
+        color: red;
+      }
     }
   }
 }

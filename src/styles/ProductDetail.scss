@@ -7,7 +7,7 @@
   width: 85%;
   max-width: 500px;
   min-height: calc(100vh - 145px);
-  gap: 10px;
+  gap: 20px;
   margin: 20px 0;
   padding: 25px;
   border-radius: 5px;
@@ -20,16 +20,21 @@
     height: 300px;
     object-fit: contain;
   }
-  .price {
-    font-weight: bold;
-  }
-  .old-price {
-    color: red;
-    font-weight: bold;
-    text-decoration: line-through;
-  }
-  .new-price {
-    font-weight: bold;
-    color: green;
+  .price-info {
+    @include flex-col-centered;
+    .price {
+      font-weight: bold;
+      font-size: 40px;
+    }
+    .old-price {
+      color: red;
+      font-weight: bold;
+      text-decoration: line-through;
+    }
+    .new-price {
+      font-weight: bold;
+      color: green;
+      font-size: 30px;
+    }
   }
 }

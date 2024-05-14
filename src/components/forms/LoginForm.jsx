@@ -69,7 +69,9 @@ const LoginForm = ({ setLoginSuccess }) => {
         type="password"
         placeholder="Password"
       />
-      <button type="submit">Login</button>
+      <button className="button-style" type="submit">
+        Login
+      </button>
       {loginWarning ? (
         <p className="warning">Username or password incorrect</p>
       ) : null}

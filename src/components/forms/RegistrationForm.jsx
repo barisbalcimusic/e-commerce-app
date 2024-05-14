@@ -108,7 +108,9 @@ const RegistrationForm = ({ setRegistrationSuccess }) => {
       {emailWarning ? (
         <p className="warning">This email is already registered.</p>
       ) : null}
-      <button type="submit">Register</button>
+      <button className="button-style" type="submit">
+        Register
+      </button>
     </form>
   );
 };

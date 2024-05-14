@@ -19,10 +19,23 @@ const ProductCard = ({ product }) => {
         <p className="rating">
           Rating: <span>{product.rating}</span>
         </p>
-        <p className="price">
-          {product.price}
-          <span>$</span>
-        </p>
+        <div className="price-div">
+          <p className={product.discountPercentage > 0 ? "old-price" : "price"}>
+            {product.price} $
+          </p>
+          {product.discountPercentage > 0 && (
+            <p className="new-price">
+              {
+                //calculate discounted price
+                (
+                  product.price -
+                  product.price * (product.discountPercentage / 100)
+                ).toFixed(2)
+              }{" "}
+              $
+            </p>
+          )}
+        </div>
         <div className="button-div">
           <AddButton product={product} />
         </div>

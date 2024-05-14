@@ -56,12 +56,12 @@ const ShoppingCart = () => {
         <p>Your cart is empty.</p>
       )}
       {cart.length > 0 && (
-        <button className="add-button" onClick={handleOrder}>
-          Order
+        <button className="button-style" onClick={handleOrder}>
+          Checkout
         </button>
       )}
       {warning && (
-        <p>
+        <p className="warning">
           You have to <Link to={"/auth"}>login</Link> or{" "}
           <Link to={"/auth"}>register</Link> to continue{" "}
         </p>
