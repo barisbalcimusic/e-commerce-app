@@ -24,13 +24,13 @@
         width: 150;
         height: 150px;
         font-size: 18px;
-        background-color: white;
+        background-color: $bg-1;
         color: black;
         text-decoration: none;
         font-weight: bold;
-        box-shadow: 0px 0px 5px 2px lightgray;
+        box-shadow: 0px 0px 5px 2px $box-shadow;
         &:hover {
-          box-shadow: 0px 0px 5px 2px red;
+          box-shadow: 0px 0px 7px 3px $secondary;
         }
         cursor: pointer;
         .category-name {
@@ -81,12 +81,12 @@
         gap: 10px;
         color: black;
         text-decoration: none;
-        background-color: white;
+        background-color: $bg-1;
         border-radius: 10px;
-        box-shadow: 0px 0px 5px 2px lightgray;
+        box-shadow: 0px 0px 5px 2px $box-shadow;
         padding: 5px;
         &:hover {
-          background-color: orange;
+          background-color: $primary;
         }
         img {
           width: 60px;
@@ -101,13 +101,13 @@
             font-weight: bold;
           }
           .old-price {
-            color: red;
+            color: $warning;
             font-weight: bold;
             text-decoration: line-through;
           }
           .new-price {
             font-weight: bold;
-            color: green;
+            color: $success;
           }
         }
       }

@@ -3,7 +3,7 @@
     margin: 0;
   }
   @include flex-col-spaced;
-  background-color: white;
+  background-color: $bg-1;
   width: 85%;
   max-width: 500px;
   min-height: calc(100vh - 145px);
@@ -27,13 +27,13 @@
       font-size: 40px;
     }
     .old-price {
-      color: red;
+      color: $warning;
       font-weight: bold;
       text-decoration: line-through;
     }
     .new-price {
       font-weight: bold;
-      color: green;
+      color: $success;
       font-size: 30px;
     }
   }

@@ -17,9 +17,9 @@ header {
         height: 50px;
         object-fit: cover;
         border-radius: 5px;
-        box-shadow: 0px 0px 4px 0px gray;
+        box-shadow: 0px 0px 4px 0px $box-shadow;
         &:hover {
-          box-shadow: 0px 0px 4px 2px gray;
+          box-shadow: 0px 0px 10px 0px $hover;
           cursor: pointer;
         }
       }
@@ -78,7 +78,7 @@ header {
             @include flex-row-centered;
             width: 15px;
             height: 15px;
-            background-color: white;
+            background-color: $bg-1;
             padding: 10px;
             margin: 0;
             font-weight: bold;
@@ -95,7 +95,7 @@ header {
           font-size: 20px;
           cursor: pointer;
           &:hover {
-            color: $secondary;
+            color: $hover;
           }
         }
       }
@@ -122,7 +122,7 @@ header {
             text-decoration: none;
             font-weight: bold;
             &:hover {
-              background-color: red;
+              background-color: $hover;
             }
           }
         }

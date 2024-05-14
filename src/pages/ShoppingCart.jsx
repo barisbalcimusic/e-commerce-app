@@ -62,8 +62,8 @@ const ShoppingCart = () => {
       )}
       {warning && (
         <p className="warning">
-          You have to <Link to={"/auth"}>login</Link> or{" "}
-          <Link to={"/auth"}>register</Link> to continue{" "}
+          To continue, please <Link to={"/auth"}>login</Link> or{" "}
+          <Link to={"/auth"}>register</Link>.
         </p>
       )}
     </div>

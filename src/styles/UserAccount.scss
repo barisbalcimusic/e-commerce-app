@@ -9,19 +9,18 @@
   .sign-out {
     border: none;
     padding: 10px;
-    background-color: orange;
+    background-color: $secondary;
     &:hover {
-      background-color: red;
+      background-color: $hover;
       cursor: pointer;
     }
   }
   .user-settings {
     width: 80%;
     max-width: 400px;
-    background-color: #ffc529;
+    background-color: $primary;
     border: solid black 1px;
     border-bottom: none;
-    border-radius: 5px;
     .user-setting {
       @include flex-row-centered;
       width: 100%;
@@ -29,7 +28,7 @@
       padding: 20px;
       font-weight: bold;
       &:hover {
-        background-color: red;
+        background-color: $secondary;
         cursor: pointer;
       }
     }

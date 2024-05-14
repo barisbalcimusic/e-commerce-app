@@ -5,9 +5,9 @@
   max-width: 320px;
   height: 320px;
   padding: 10px;
-  background-color: white;
+  background-color: $bg-1;
   border-radius: 5px;
-  box-shadow: 0px 0px 10px 0px lightgray;
+  box-shadow: 0px 0px 10px 0px $box-shadow;
   & * {
     margin: 0;
   }
@@ -29,19 +29,19 @@
     .details {
       width: 100%;
       text-align: end;
-      color: #0000ff;
+      color: $link;
       font-weight: 600;
       font-size: 15px;
       font-style: italic;
       margin-left: 10px;
       &:hover {
-        color: red;
+        color: $hover;
       }
     }
     .rating {
       text-align: center;
       font-weight: bold;
-      border: solid 1px orange;
+      border: solid 1px $secondary;
       padding: 2px;
       span {
         font-style: italic;
@@ -56,14 +56,14 @@
     }
     .old-price {
       text-align: center;
-      color: red;
+      color: $warning;
       font-weight: bold;
       text-decoration: line-through;
     }
     .new-price {
       text-align: center;
       font-weight: bold;
-      color: green;
+      color: $success;
       font-size: 23px;
     }
   }

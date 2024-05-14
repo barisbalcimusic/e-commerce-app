@@ -17,8 +17,8 @@
     button {
       border: solid 1px gray;
       border-radius: 5px;
-      background-color: white;
-      box-shadow: 0px 0px 4px 0px lightgray;
+      background-color: $bg-1;
+      box-shadow: 0px 0px 4px 0px $box-shadow;
       padding: 4px 8px;
     }
     th,
@@ -27,7 +27,7 @@
       border-collapse: collapse;
     }
     th {
-      background-color: orange;
+      background-color: $secondary;
     }
     .price-td {
       text-align: center;
@@ -36,17 +36,17 @@
       padding-left: 5px;
     }
     .total-td {
-      background-color: orange;
+      background-color: $secondary;
       padding-left: 5px;
     }
   }
   .warning {
     a {
-      color: blue;
+      color: $link;
       text-decoration: none;
       font-weight: bold;
       &:hover {
-        color: red;
+        color: $hover;
       }
     }
   }

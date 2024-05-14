@@ -4,7 +4,7 @@ footer {
   width: 100%;
   height: 30%;
   min-height: 200px;
-  background-color: orange;
+  background-color: $secondary;
   padding: 20px;
   p {
     margin: 0;
@@ -22,7 +22,7 @@ footer {
       a {
         color: black;
         &:hover {
-          color: beige;
+          color: $bg-1;
         }
       }
     }

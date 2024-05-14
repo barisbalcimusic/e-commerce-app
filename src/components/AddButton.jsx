@@ -1,23 +1,5 @@
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 import { useCartContext } from "../contexts/CartContext";
-import styled from "styled-components";
-
-const BUTTON = styled.button`
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  font-weight: bold;
-  padding: 10px 30px;
-  background-color: orange;
-  border: none;
-  border-radius: 20px;
-  transition: background-color 0.5s 0s linear, color 0.5s 0s linear;
-  &:hover {
-    cursor: pointer;
-    background-color:red;
-  }
-}
-`;
 
 const AddButton = ({ product }) => {
   const { cart, setCart } = useCartContext();
@@ -44,9 +26,9 @@ const AddButton = ({ product }) => {
   };
 
   return (
-    <BUTTON ref={buttonRef} onClick={addToCart} className="add-button">
+    <button ref={buttonRef} onClick={addToCart} className="add-button">
       Add to Cart
-    </BUTTON>
+    </button>
   );
 };
 

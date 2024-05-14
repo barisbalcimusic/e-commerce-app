@@ -73,7 +73,7 @@ const LoginForm = ({ setLoginSuccess }) => {
         Login
       </button>
       {loginWarning ? (
-        <p className="warning">Username or password incorrect</p>
+        <p className="warning">The username or password is incorrect.</p>
       ) : null}
     </form>
   );

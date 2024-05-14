@@ -103,7 +103,9 @@ const RegistrationForm = ({ setRegistrationSuccess }) => {
         onChange={(e) => setNewPassword(e.target.value)}
       />
       {passwordWarning ? (
-        <p className="warning">Password must contain at least 8 characters</p>
+        <p className="warning">
+          The password must contain at least 8 characters.
+        </p>
       ) : null}
       {emailWarning ? (
         <p className="warning">This email is already registered.</p>

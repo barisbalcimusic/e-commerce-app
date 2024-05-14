@@ -6,6 +6,16 @@
       "email": "baris@user.com",
       "password": "12345678",
       "id": "d2f0"
+    },
+    {
+      "id": "bd90",
+      "email": "basdas@asdasdasd",
+      "password": "asdasdasdas"
+    },
+    {
+      "id": "25e8",
+      "email": "asd@asd",
+      "password": "asdasdads"
     }
   ],
   "products": [
@@ -59,7 +69,9 @@
       "brand": "Samsung",
       "category": "smartphones",
       "thumbnail": "https://cdn.dummyjson.com/product-images/3/thumbnail.jpg",
-      "images": ["https://cdn.dummyjson.com/product-images/3/1.jpg"],
+      "images": [
+        "https://cdn.dummyjson.com/product-images/3/1.jpg"
+      ],
       "soldAmount": 40
     },
     {
