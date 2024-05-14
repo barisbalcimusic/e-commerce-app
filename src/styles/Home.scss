@@ -68,7 +68,7 @@
           margin: 0;
         }
         @include flex-col-centered;
-        gap: 10px;
+        gap: 5px;
         color: black;
         text-decoration: none;
         width: 200px;
@@ -76,10 +76,13 @@
         background-color: white;
         border-radius: 10px;
         box-shadow: 0px 0px 5px 2px lightgray;
+        &:hover {
+          background-color: orange;
+        }
         img {
           width: 150px;
-          height: 100px;
-          object-fit: cover;
+          height: 70px;
+          object-fit: contain;
         }
         .title {
           text-align: center;
