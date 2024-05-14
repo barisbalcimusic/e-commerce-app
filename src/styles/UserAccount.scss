@@ -1,7 +1,20 @@
 .user-account-container {
   @include flex-col-centered;
+  gap: 20px;
   width: 100%;
   min-height: calc(100vh - 145px);
+  h2 {
+    margin: 0;
+  }
+  .sign-out {
+    border: none;
+    padding: 10px;
+    background-color: orange;
+    &:hover {
+      background-color: red;
+      cursor: pointer;
+    }
+  }
   .user-settings {
     width: 80%;
     max-width: 400px;
