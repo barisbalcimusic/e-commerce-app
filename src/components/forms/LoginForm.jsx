@@ -1,6 +1,6 @@
-import { useEffect, useState } from "react";
 import "../../App.scss";
 import fetchUserData from "../data/fetchUserData";
+import { useEffect, useState } from "react";
 import { useAuthContext } from "../../contexts/AuthContext";
 
 const LoginForm = ({ setLoginSuccess }) => {
@@ -9,7 +9,7 @@ const LoginForm = ({ setLoginSuccess }) => {
   const [userData, setUserData] = useState();
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [loginWarning, setLoginWarning] = useState(false);
-  const { setIsLoggedIn } = useAuthContext();
+  const { setIsLoggedIn, setLoggedUser } = useAuthContext();
 
   //1- change submit state
   const handleSubmit = (e) => {
@@ -35,13 +35,14 @@ const LoginForm = ({ setLoginSuccess }) => {
   //3- check if the user already exists
   useEffect(() => {
     if (userData) {
-      const userExists = userData.filter(
+      const userExists = userData.find(
         (user) => user.email == email && user.password == password
       );
-      if (userExists.length !== 0) {
+      if (userExists) {
         setLoginWarning(false);
         setLoginSuccess(true);
-        setIsLoggedIn(true); //! sorun var
+        setIsLoggedIn(true);
+        setLoggedUser(userExists);
       } else {
         setLoginWarning(true);
         setIsSubmitted(false);

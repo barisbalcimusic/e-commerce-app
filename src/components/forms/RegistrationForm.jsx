@@ -74,8 +74,18 @@ const RegistrationForm = ({ setRegistrationSuccess }) => {
   return (
     //1- submit form
     <form onSubmit={handleSubmit} className="registration-form">
-      <input className="form-input" type="text" placeholder="First name" />
-      <input className="form-input" type="text" placeholder="Last name" />
+      <input
+        className="form-input"
+        type="text"
+        placeholder="First name"
+        required
+      />
+      <input
+        className="form-input"
+        type="text"
+        placeholder="Last name"
+        required
+      />
       <input
         value={email}
         className="form-input"

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useCartContext } from "../contexts/CartContext";
 import { useNavigate } from "react-router-dom";
+import { useAuthContext } from "../contexts/AuthContext";
 
 const Checkout = () => {
   const { cart, total } = useCartContext();
@@ -10,6 +11,15 @@ const Checkout = () => {
   const { setCart } = useCartContext();
   const [count, setCount] = useState(3);
   const navigate = useNavigate();
+
+  const { isLoggedIn } = useAuthContext();
+
+  //if not logged in, redirect to home
+  useEffect(() => {
+    if (!isLoggedIn) {
+      navigate("/");
+    }
+  });
 
   useEffect(() => {
     if (formData) {

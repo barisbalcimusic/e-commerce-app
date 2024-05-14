@@ -31,5 +31,8 @@ footer {
     display: flex;
     flex-direction: column;
     gap: 20px;
+    div {
+      @include flex-col-centered;
+    }
   }
 }

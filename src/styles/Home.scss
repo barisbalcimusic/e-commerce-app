@@ -1,6 +1,6 @@
 .home-container {
   @include flex-col-spaced;
-  gap: 10px;
+  gap: 30px;
   padding-bottom: 10px;
   .categories-div {
     @include flex-col-spaced;
@@ -8,8 +8,10 @@
     gap: 20px;
     padding-top: 20px;
     h2 {
-      text-align: center;
+      text-align: left;
+      width: 100%;
       margin: 0;
+      text-align: center;
     }
     .categories {
       @include flex-row-centered;
@@ -67,37 +69,43 @@
         * {
           margin: 0;
         }
-        @include flex-col-centered;
-        gap: 5px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        width: 100%;
+        max-width: 320px;
+        height: 100px;
+        gap: 10px;
         color: black;
         text-decoration: none;
-        width: 200px;
-        height: 200px;
         background-color: white;
         border-radius: 10px;
         box-shadow: 0px 0px 5px 2px lightgray;
+        padding: 5px;
         &:hover {
           background-color: orange;
         }
         img {
-          width: 150px;
-          height: 70px;
-          object-fit: contain;
+          width: 60px;
+          height: 60px;
+          object-fit: cover;
         }
-        .title {
-          text-align: center;
-        }
-        .price {
-          font-weight: bold;
-        }
-        .old-price {
-          color: red;
-          font-weight: bold;
-          text-decoration: line-through;
-        }
-        .new-price {
-          font-weight: bold;
-          color: green;
+        .product-infos {
+          display: flex;
+          flex-direction: column;
+          width: 220px;
+          .price {
+            font-weight: bold;
+          }
+          .old-price {
+            color: red;
+            font-weight: bold;
+            text-decoration: line-through;
+          }
+          .new-price {
+            font-weight: bold;
+            color: green;
+          }
         }
       }
     }

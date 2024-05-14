@@ -1,0 +1,24 @@
+.user-account-container {
+  @include flex-col-centered;
+  width: 100%;
+  min-height: calc(100vh - 145px);
+  .user-settings {
+    width: 80%;
+    max-width: 400px;
+    background-color: #ffc529;
+    border: solid black 1px;
+    border-bottom: none;
+    border-radius: 5px;
+    .user-setting {
+      @include flex-row-centered;
+      width: 100%;
+      border-bottom: solid 1px black;
+      padding: 20px;
+      font-weight: bold;
+      &:hover {
+        background-color: red;
+        cursor: pointer;
+      }
+    }
+  }
+}

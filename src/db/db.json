@@ -1,31 +1,11 @@
 {
-  "admins": [
-    {
-      "email": "admin1@admin1.com",
-      "password": "12345678",
-      "id": "b0a0"
-    },
-    {
-      "email": "admin2@admin2.com",
-      "password": "12345678",
-      "id": "c922"
-    }
-  ],
   "users": [
     {
-      "email": "user1@user1.com",
+      "firstname": "baris",
+      "lastname": "balci",
+      "email": "baris@user.com",
       "password": "12345678",
       "id": "d2f0"
-    },
-    {
-      "email": "user2@user2.com",
-      "password": "12345678",
-      "id": "6eca"
-    },
-    {
-      "id": "6e54",
-      "email": "asd@asdasd",
-      "password": "asdasdasd"
     }
   ],
   "products": [
