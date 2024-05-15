@@ -1,5 +1,5 @@
 import "../../App.scss";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import logo from "../../assets/logo.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -75,7 +75,7 @@ const Header = () => {
               </li>
               {categories.map((category, index) => (
                 <li key={index}>
-                  <Link to={`/store/${category}`}>{category}</Link>
+                  <NavLink to={`/store/${category}`}>{category}</NavLink>
                 </li>
               ))}
             </ul>
