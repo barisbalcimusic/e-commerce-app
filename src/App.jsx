@@ -1,18 +1,20 @@
 import "./App.scss";
 import { Route, Routes } from "react-router-dom";
 import Layout from "./components/layout/Layout";
+//pages
 import Home from "./pages/Home";
 import Store from "./pages/Store";
 import Credentials from "./pages/Credentials";
-import ProductsContextProvider from "./contexts/ProductsContext";
 import ProductDetail from "./pages/ProductDetail";
-import SidebarContextProvider from "./contexts/SidebarContext";
-import AuthContextProvider from "./contexts/AuthContext";
 import UserAccount from "./pages/UserAccount";
 import ShoppingCart from "./pages/ShoppingCart";
+import Checkout from "./pages/Checkout";
+//contexts
+import ProductsContextProvider from "./contexts/ProductsContext";
+import SidebarContextProvider from "./contexts/SidebarContext";
+import AuthContextProvider from "./contexts/AuthContext";
 import CartContextProvider from "./contexts/CartContext";
 import ResponsivityContextProvider from "./contexts/ResponsivityContext";
-import Checkout from "./pages/Checkout";
 
 const App = () => {
   return (

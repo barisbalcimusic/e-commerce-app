@@ -6,10 +6,10 @@ const UserAccount = () => {
   const { isLoggedIn, setIsLoggedIn, loggedUser } = useAuthContext();
   const navigate = useNavigate();
 
-  //if not logged in, redirect to home
+  //if not logged in, redirect to login
   useEffect(() => {
     if (!isLoggedIn) {
-      navigate("/");
+      navigate("/auth");
     }
   }, [isLoggedIn]);
 

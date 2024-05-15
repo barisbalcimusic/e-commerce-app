@@ -25,7 +25,7 @@ const Credentials = () => {
     }
   }, [registrationSuccess, loginSuccess]);
 
-  //when countdown ends, redirect to home
+  //when countdown ends, redirect to home (or back to checkout)
   useEffect(() => {
     if (count <= 0) {
       clearInterval(countdown);

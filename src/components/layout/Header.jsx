@@ -71,7 +71,7 @@ const Header = () => {
           <div className="nav-bottom">
             <ul className="categories-bar">
               <li>
-                <Link to="/store">All products</Link>
+                <Link to="/store">ALL PRODUCTS</Link>
               </li>
               {categories.map((category, index) => (
                 <li key={index}>

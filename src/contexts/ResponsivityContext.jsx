@@ -1,6 +1,6 @@
 import { createContext, useContext, useEffect, useState } from "react";
 
-const responsitityContext = createContext();
+const ResponsitityContext = createContext();
 
 const ResponsivityContextProvider = ({ children }) => {
   const [isMobile, setIsMobile] = useState(false);
@@ -22,12 +22,11 @@ const ResponsivityContextProvider = ({ children }) => {
   }, [isMobile]);
 
   return (
-    <responsitityContext.Provider value={{ isMobile, setIsMobile }}>
+    <ResponsitityContext.Provider value={{ isMobile, setIsMobile }}>
       {children}
-    </responsitityContext.Provider>
+    </ResponsitityContext.Provider>
   );
 };
 
 export default ResponsivityContextProvider;
-
-export const useResponsivityContext = () => useContext(responsitityContext);
+export const useResponsivityContext = () => useContext(ResponsitityContext);

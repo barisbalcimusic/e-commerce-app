@@ -1,6 +1,6 @@
 import { createContext, useContext, useRef, useState } from "react";
 
-const sidebarContext = createContext();
+const SidebarContext = createContext();
 
 const SidebarContextProvider = ({ children }) => {
   const [isSidebarOpened, setIsSidebarOpened] = useState(false);
@@ -14,13 +14,13 @@ const SidebarContextProvider = ({ children }) => {
   };
 
   return (
-    <sidebarContext.Provider
-      value={{ isSidebarOpened, handleSidebarClick, sidebarRef }}>
+    <SidebarContext.Provider
+      value={{ isSidebarOpened, handleSidebarClick, sidebarRef }}
+    >
       {children}
-    </sidebarContext.Provider>
+    </SidebarContext.Provider>
   );
 };
 
 export default SidebarContextProvider;
-
-export const useSidebarContext = () => useContext(sidebarContext);
+export const useSidebarContext = () => useContext(SidebarContext);

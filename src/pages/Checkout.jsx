@@ -11,13 +11,13 @@ const Checkout = () => {
   const { setCart } = useCartContext();
   const [count, setCount] = useState(3);
   const navigate = useNavigate();
-
   const { isLoggedIn } = useAuthContext();
+  const location = useLocation();
 
-  //if not logged in, redirect to home
+  //if not logged in, redirect to login
   useEffect(() => {
     if (!isLoggedIn) {
-      navigate("/");
+      navigate("/auth", { state: { from: location } });
     }
   });
 

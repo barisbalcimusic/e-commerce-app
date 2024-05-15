@@ -132,6 +132,38 @@ header {
   }
 }
 
+aside {
+  width: 100vw;
+  background-color: rgba(242, 152, 44, 0.95);
+  position: absolute;
+  z-index: 2;
+  top: 145px;
+  left: -100vw;
+  transition: transform 0.3s 0s linear;
+  ul {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    font-weight: bold;
+    li {
+      width: 100%;
+      height: 50px;
+      padding: 0 20px;
+      display: flex;
+      align-items: center;
+    }
+  }
+  .close-icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 35px;
+  }
+  .category {
+    color: black;
+  }
+}
+
 ul {
   display: flex;
   justify-content: space-between;
