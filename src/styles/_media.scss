@@ -1,65 +1,65 @@
 @import "./_variables";
 
-//grid
+//------------------------ GRID ------------------------
 @media (min-width: 1434) {
   .highlights,
   .categories,
   .products-div {
-    grid-template-columns: repeat(4, 1fr) !important;
+    grid-template-columns: repeat(4, 1fr);
   }
 }
 @media (min-width: 1068px) and (max-width: 1433px) {
   .highlights,
   .categories,
   .products-div {
-    grid-template-columns: repeat(3, 1fr) !important;
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 @media (min-width: 700px) and (max-width: 1067px) {
   .highlights,
   .categories,
   .products-div {
-    grid-template-columns: repeat(2, 1fr) !important;
+    grid-template-columns: repeat(2, 1fr);
   }
   .categories {
-    grid-template-columns: repeat(3, 1fr) !important;
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 @media (max-width: 699px) {
   .highlights,
   .products-div {
-    grid-template-columns: repeat(1, 1fr) !important;
+    grid-template-columns: repeat(1, 1fr);
   }
   .categories {
-    grid-template-columns: repeat(2, 1fr) !important;
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
-//only desktop
+//------------------------ DESKTOP ONLY ------------------------
 @media screen and (min-width: 1068px) {
   .checkout,
   .home-container,
   .product-detail,
   .shopping-cart {
-    margin-top: 70px !important;
+    margin-top: 70px;
   }
   .category-box {
-    width: 300px !important;
-    height: 300px !important;
+    width: 300px;
+    height: 300px;
   }
   .category-name {
-    width: 50% !important;
-    height: 50% !important;
-    background-color: $primary !important;
+    width: 50%;
+    height: 50%;
+    background-color: $primary;
   }
   .credentials,
   .user-account-container,
   .products-container {
-    margin-top: 50px !important;
+    margin-top: 50px;
   }
   .highlights,
   .categories {
-    gap: 20px !important;
+    gap: 20px;
   }
   .not-found {
     font-size: 20px;
@@ -67,25 +67,25 @@
   }
 }
 
-//tablet & desktop
+//------------------------ TABLET & DESKTOP ------------------------
 @media screen and (min-width: 768px) {
   .nav-left {
     display: none;
   }
   .products {
-    flex-direction: row !important;
+    flex-direction: row;
     flex-wrap: wrap;
-    gap: 30px !important;
+    gap: 30px;
   }
   footer {
-    padding: 50px !important;
+    padding: 50px;
     ul {
-      flex-direction: row !important;
+      flex-direction: row;
     }
   }
   .shopping-cart {
     table {
-      font-size: 16px !important;
+      font-size: 16px;
     }
   }
 }

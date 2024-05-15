@@ -1,4 +1,3 @@
-@import "./styles/_media";
 @import "./styles/_variables";
 @import "./styles/_mixin";
 //components
@@ -15,6 +14,7 @@
 @import "./styles/pages-style/Checkout";
 @import "./styles/pages-style/UserAccount";
 @import "./styles/pages-style/NotFound";
+@import "./styles/_media";
 
 *::placeholder {
   font-style: italic;
