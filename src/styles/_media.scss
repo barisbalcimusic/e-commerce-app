@@ -5,33 +5,33 @@
   .highlights,
   .categories,
   .products-div {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4, 1fr) !important;
   }
 }
 @media (min-width: 1068px) and (max-width: 1433px) {
   .highlights,
   .categories,
   .products-div {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr) !important;
   }
 }
 @media (min-width: 700px) and (max-width: 1067px) {
   .highlights,
   .categories,
   .products-div {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr) !important;
   }
   .categories {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr) !important;
   }
 }
 @media (max-width: 699px) {
   .highlights,
   .products-div {
-    grid-template-columns: repeat(1, 1fr);
+    grid-template-columns: repeat(1, 1fr) !important;
   }
   .categories {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr) !important;
   }
 }
 
@@ -41,25 +41,25 @@
   .home-container,
   .product-detail,
   .shopping-cart {
-    margin-top: 70px;
+    margin-top: 70px !important;
   }
   .category-box {
-    width: 300px;
-    height: 300px;
+    width: 300px !important;
+    height: 300px !important;
   }
   .category-name {
-    width: 50%;
-    height: 50%;
-    background-color: $primary;
+    width: 50% !important;
+    height: 50% !important;
+    background-color: $primary !important;
   }
   .credentials,
   .user-account-container,
   .products-container {
-    margin-top: 50px;
+    margin-top: 50px !important;
   }
   .highlights,
   .categories {
-    gap: 20px;
+    gap: 20px !important;
   }
   .not-found {
     font-size: 20px;
@@ -73,19 +73,19 @@
     display: none;
   }
   .products {
-    flex-direction: row;
+    flex-direction: row !important;
     flex-wrap: wrap;
-    gap: 30px;
+    gap: 30px !important;
   }
   footer {
-    padding: 50px;
+    padding: 50px !important;
     ul {
-      flex-direction: row;
+      flex-direction: row !important;
     }
   }
   .shopping-cart {
     table {
-      font-size: 16px;
+      font-size: 16px !important;
     }
   }
 }
