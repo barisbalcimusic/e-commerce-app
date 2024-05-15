@@ -1,18 +1,20 @@
 @import "./styles/_media";
 @import "./styles/_variables";
 @import "./styles/_mixin";
-@import "./styles/Header";
-@import "./styles/ProductCard";
-@import "./styles/Products";
-@import "./styles/Home";
-@import "./styles/ProductDetail";
-@import "./styles/Credentials";
-@import "./styles/ShoppingCart";
-@import "./styles/Footer";
-@import "./styles/Counter";
-@import "./styles/Checkout";
-@import "./styles/UserAccount";
-@import "./styles/NotFound";
+//components
+@import "./styles/components-style/Header";
+@import "./styles/components-style/ProductCard";
+@import "./styles/components-style/Products";
+@import "./styles/components-style/Footer";
+@import "./styles/components-style/Counter";
+//pages
+@import "./styles/pages-style/Home";
+@import "./styles/pages-style/ProductDetail";
+@import "./styles/pages-style/Credentials";
+@import "./styles/pages-style/ShoppingCart";
+@import "./styles/pages-style/Checkout";
+@import "./styles/pages-style/UserAccount";
+@import "./styles/pages-style/NotFound";
 
 *::placeholder {
   font-style: italic;
