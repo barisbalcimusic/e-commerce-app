@@ -19,31 +19,28 @@
 *::placeholder {
   font-style: italic;
 }
-
 .button-div {
   @include flex-row-centered;
   width: 100%;
 }
-
 .button-style {
-  font-weight: bold;
-  border: none;
   background-color: orange;
   padding: 10px 20px !important;
+  font-weight: bold;
+  border: none;
   border-radius: 10px;
   &:hover {
     background-color: $hover;
     cursor: pointer;
   }
 }
-
 .add-button {
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: $secondary;
   font-weight: bold;
   padding: 10px 30px;
-  background-color: $secondary;
   border: none;
   border-radius: 20px;
   transition: background-color 0.5s 0s linear, color 0.5s 0s linear;

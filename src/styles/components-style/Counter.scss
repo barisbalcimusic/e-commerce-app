@@ -1,9 +1,9 @@
 .counter {
-  padding: 5px;
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 5px;
+  padding: 5px;
   button {
     &:hover {
       background-color: $secondary;

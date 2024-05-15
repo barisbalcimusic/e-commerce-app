@@ -1,36 +1,34 @@
 .home-container {
   @include flex-col-spaced;
-  width: 100%;
   gap: 30px;
+  width: 100%;
   margin: 30px 0;
   .categories-div {
     @include flex-col-spaced;
     gap: 20px;
     h2 {
-      text-align: left;
       width: 100%;
-      margin: 0;
-      text-align: center;
       background-color: $primary;
+      margin: 0;
       padding: 3px;
+      text-align: center;
       letter-spacing: 2px;
     }
     .categories {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      width: 100%;
-      flex-wrap: wrap;
       gap: 5px;
+      width: 100%;
       .category-box {
         display: flex;
         flex-wrap: wrap;
         width: 150;
         height: 150px;
-        font-size: 18px;
         background-color: $bg-1;
         color: black;
-        text-decoration: none;
+        font-size: 18px;
         font-weight: bold;
+        text-decoration: none;
         box-shadow: 0px 0px 5px 2px $box-shadow;
         &:hover {
           box-shadow: 0px 0px 7px 3px $secondary;
@@ -40,8 +38,8 @@
           @include flex-col-centered;
           width: 100%;
           height: 100%;
-          text-align: center;
           background-color: $secondary;
+          text-align: center;
         }
         .category-img-div {
           @include flex-col-centered;
@@ -69,15 +67,14 @@
   }
   .highlights-div {
     @include flex-col-spaced;
-    padding: 0 10px;
     gap: 20px;
+    padding: 0 10px;
     h2 {
-      text-align: center;
-      margin: 0px;
-      background-color: $primary;
       width: 100%;
+      background-color: $primary;
+      margin: 0px;
       padding: 3px;
-      letter-spacing: 2px;
+      text-align: center;
       letter-spacing: 2px;
     }
     .highlights {
@@ -91,16 +88,16 @@
         display: flex;
         justify-content: space-around;
         align-items: center;
+        gap: 10px;
         width: 100%;
         max-width: 320px;
         height: 100px;
-        gap: 10px;
         color: black;
-        text-decoration: none;
         background-color: $bg-1;
+        padding: 5px;
+        text-decoration: none;
         border-radius: 5px;
         box-shadow: 0px 0px 5px 2px $box-shadow;
-        padding: 5px;
         &:hover {
           background-color: $primary;
         }
@@ -122,8 +119,8 @@
             text-decoration: line-through;
           }
           .new-price {
-            font-weight: bold;
             color: $success;
+            font-weight: bold;
           }
         }
       }

@@ -3,17 +3,17 @@
     margin: 0;
   }
   @include flex-col-spaced;
-  background-color: $bg-1;
+  gap: 20px;
   width: 85%;
   max-width: 500px;
   min-height: calc(100vh - 145px);
-  gap: 20px;
+  background-color: $bg-1;
   margin: 20px 0;
   padding: 25px;
   border-radius: 5px;
   .title {
-    font-weight: bold;
     font-size: 20px;
+    font-weight: bold;
   }
   img {
     width: 300px;
@@ -23,8 +23,8 @@
   .price-info {
     @include flex-col-centered;
     .price {
-      font-weight: bold;
       font-size: 40px;
+      font-weight: bold;
     }
     .old-price {
       color: $warning;
@@ -32,9 +32,9 @@
       text-decoration: line-through;
     }
     .new-price {
-      font-weight: bold;
       color: $success;
       font-size: 30px;
+      font-weight: bold;
     }
   }
 }

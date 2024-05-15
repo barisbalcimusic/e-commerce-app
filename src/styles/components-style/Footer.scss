@@ -13,10 +13,10 @@ footer {
     }
   }
   ul {
-    text-align: center;
-    margin: 0;
     display: flex;
     flex-direction: column;
+    margin: 0;
+    text-align: center;
     li {
       font-weight: bold;
       a {

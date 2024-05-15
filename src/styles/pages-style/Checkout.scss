@@ -1,36 +1,34 @@
 .checkout {
   @include flex-row-centered;
+  gap: 100px;
   width: 100%;
   min-height: calc(100vh - 145px);
   margin: 20px 0;
-  gap: 100px;
   .order-success {
     color: $success;
     text-align: center;
   }
   p {
-    font-size: 20px;
     margin: 0;
+    font-size: 20px;
   }
   form {
-    width: 90%;
-    max-width: 400px;
     display: flex;
     flex-direction: column;
     gap: 10px;
+    width: 90%;
+    max-width: 400px;
     background-color: $bg-1;
     padding: 40px;
-    input {
-      padding: 10px;
-    }
+    input,
     select {
       padding: 10px;
     }
     button {
       background-color: $secondary;
+      padding: 10px;
       font-weight: bold;
       border: none;
-      padding: 10px;
       &:hover {
         background-color: $btn-hover;
         cursor: pointer;
