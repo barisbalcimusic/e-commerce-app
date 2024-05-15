@@ -6,8 +6,8 @@ const Categories = () => {
 
   return (
     <div className="categories">
-      {categories.map((category, index) => (
-        <Category key={index} category={category} products={products} />
+      {categories.map((category) => (
+        <Category key={category} category={category} products={products} />
       ))}
     </div>
   );

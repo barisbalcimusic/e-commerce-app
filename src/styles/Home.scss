@@ -20,7 +20,7 @@
       grid-template-columns: repeat(4, 1fr);
       width: 100%;
       flex-wrap: wrap;
-      gap: 30px;
+      gap: 5px;
       .category-box {
         display: flex;
         flex-wrap: wrap;
@@ -47,6 +47,16 @@
           @include flex-col-centered;
           width: 50%;
           height: 50%;
+          &:nth-child(2) {
+            border-left: solid $cat-bor-size $category-border;
+          }
+          &:nth-child(3) {
+            border-top: solid $cat-bor-size $category-border;
+          }
+          &:nth-child(4) {
+            border-left: solid $cat-bor-size $category-border;
+            border-top: solid $cat-bor-size $category-border;
+          }
           .category-image {
             @include flex-col-centered;
             width: 100%;
@@ -73,7 +83,7 @@
     .highlights {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 10px;
+      gap: 5px;
       .highlight {
         * {
           margin: 0;

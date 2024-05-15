@@ -14,6 +14,7 @@ import { useAuthContext } from "../../contexts/AuthContext";
 import { useCartContext } from "../../contexts/CartContext";
 import { useResponsivityContext } from "../../contexts/ResponsivityContext";
 import { useProductsContext } from "../../contexts/ProductsContext";
+import { useEffect, useRef } from "react";
 
 const Header = () => {
   const { handleSidebarClick, sidebarRef } = useSidebarContext();
@@ -21,6 +22,11 @@ const Header = () => {
   const { cart } = useCartContext();
   const { isMobile } = useResponsivityContext();
   const { categories } = useProductsContext();
+  const searchRef = useRef();
+
+  useEffect(() => {
+    searchRef.current.focus();
+  }, []);
 
   return (
     <header>
@@ -44,6 +50,7 @@ const Header = () => {
             <form className="search-form">
               <FontAwesomeIcon className="glas-icon" icon={faMagnifyingGlass} />
               <input
+                ref={searchRef}
                 className="search-input"
                 type="text"
                 placeholder="search"
