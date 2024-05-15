@@ -14,7 +14,11 @@ const Category = ({ category, products }) => {
       {!isMobile &&
         productsFromCategory.map((product) => (
           <div key={product.id} className="category-img-div">
-            <img className="category-image" src={product.thumbnail} />
+            <img
+              className="category-image"
+              src={product.thumbnail}
+              alt="category-image"
+            />
           </div>
         ))}
     </Link>

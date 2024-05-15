@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 const HighlightedProduct = ({ product }) => {
   return (
     <Link to={`store/product-detail/${product.id}`} className="highlight">
-      <img src={product.thumbnail} />
+      <img src={product.thumbnail} alt="product-thumbnail" />
       <div className="product-infos">
         <p className="title">{product.title}</p>
         <p className={product.discountPercentage > 0 ? "old-price" : "price"}>
