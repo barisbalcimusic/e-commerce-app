@@ -9,6 +9,7 @@ import ProductDetail from "./pages/ProductDetail";
 import UserAccount from "./pages/UserAccount";
 import ShoppingCart from "./pages/ShoppingCart";
 import Checkout from "./pages/Checkout";
+import NotFound from "./pages/NotFound";
 //contexts
 import ProductsContextProvider from "./contexts/ProductsContext";
 import SidebarContextProvider from "./contexts/SidebarContext";
@@ -36,6 +37,7 @@ const App = () => {
                   <Route path="/user" element={<UserAccount />} />
                   <Route path="/cart" element={<ShoppingCart />} />
                   <Route path="/checkout" element={<Checkout />} />
+                  <Route path="*" element={<NotFound />} />
                 </Routes>
               </Layout>
             </ResponsivityContextProvider>

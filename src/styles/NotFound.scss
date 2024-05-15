@@ -1,0 +1,16 @@
+.not-found {
+  @include flex-col-centered;
+  min-height: calc(100vh - 145px);
+  padding: 20px;
+  div {
+    ul {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      padding-left: 30px;
+      li {
+        list-style: disc;
+      }
+    }
+  }
+}
