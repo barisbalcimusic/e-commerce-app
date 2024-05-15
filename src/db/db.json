@@ -22,7 +22,7 @@
     {
       "id": "1",
       "title": "iPhone 9",
-      "description": "An apple mobile which is nothing like apple",
+      "description": "An apple mobile which is nothing like apple. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Nullam quis risus eget urna mollis ornare vel eu leo. Donec sed odio dui. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; In hac habitasse platea dictumst. Aenean euismod bibendum laoreet. Nullam quis risus eget urna mollis ornare vel eu leo.",
       "price": 549,
       "discountPercentage": 0,
       "rating": 4.69,
@@ -69,9 +69,7 @@
       "brand": "Samsung",
       "category": "smartphones",
       "thumbnail": "https://cdn.dummyjson.com/product-images/3/thumbnail.jpg",
-      "images": [
-        "https://cdn.dummyjson.com/product-images/3/1.jpg"
-      ],
+      "images": ["https://cdn.dummyjson.com/product-images/3/1.jpg"],
       "soldAmount": 40
     },
     {
