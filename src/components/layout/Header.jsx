@@ -58,10 +58,10 @@ const Header = () => {
             </form>
           </div>
           <div className="nav-right">
-            <Link to={isLoggedIn ? "/user" : "/auth"}>
+            <Link aria-label="credentials" to={isLoggedIn ? "/user" : "/auth"}>
               <FontAwesomeIcon className="user-icon" icon={faUser} />
             </Link>
-            <Link to="/cart">
+            <Link aria-label="cart" to="/cart">
               <FontAwesomeIcon className="cart-icon" icon={faCartShopping} />
               <p className="count">{cart.length}</p>
             </Link>
