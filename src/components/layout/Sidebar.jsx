@@ -16,19 +16,47 @@ const Sidebar = ({ sidebarRef, handleSidebarClick }) => {
       <ul>
         <li>
           <Link
+            to="/"
+            className="menu-item"
             onClick={() => handleSidebarClick()}
-            to="/store"
-            className="category all-products"
           >
-            ALL PRODUCTS
+            Home
           </Link>
         </li>
+        <li>
+          <Link
+            to="/"
+            className="menu-item"
+            onClick={() => handleSidebarClick()}
+          >
+            Discounted
+          </Link>
+        </li>
+        <li>
+          <Link
+            to="/"
+            className="menu-item"
+            onClick={() => handleSidebarClick()}
+          >
+            Bestseller
+          </Link>
+        </li>
+        <li>
+          <Link
+            to="/"
+            className="menu-item"
+            onClick={() => handleSidebarClick()}
+          >
+            Best Rated
+          </Link>
+        </li>
+        <li className="menu-item">Categories</li>
         {categories ? (
           categories.map((category, index) => (
             <li key={index}>
               <Link
                 onClick={() => handleSidebarClick()}
-                className="category"
+                className="sub-menu-item"
                 to={`/store/${category}`}
               >
                 {category}
