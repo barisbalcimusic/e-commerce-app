@@ -1,6 +1,6 @@
 import "./App.scss";
 import Layout from "./components/layout/Layout";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useParams } from "react-router-dom";
 import ProductsContextProvider from "./contexts/ProductsContext";
 import SidebarContextProvider from "./contexts/SidebarContext";
 import AuthContextProvider from "./contexts/AuthContext";
