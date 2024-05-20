@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom";
 import { useProductsContext } from "../contexts/ProductsContext";
 import AddButton from "../components/AddButton";
+import { useEffect } from "react";
 
 const ProductDetail = () => {
   const { id } = useParams();
