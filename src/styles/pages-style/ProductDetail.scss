@@ -6,7 +6,7 @@
   gap: 20px;
   width: 85%;
   max-width: 500px;
-  min-height: calc(100vh - 145px);
+  min-height: calc(100vh - $header-height);
   background-color: $bg-1;
   margin: 20px 0;
   padding: 25px;

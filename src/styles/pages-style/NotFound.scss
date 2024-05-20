@@ -1,6 +1,6 @@
 .not-found {
   @include flex-col-centered;
-  min-height: calc(100vh - 145px);
+  min-height: calc(100vh - $header-height);
   padding: 20px;
   div {
     ul {

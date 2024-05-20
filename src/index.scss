@@ -9,8 +9,9 @@ body {
   margin: 0;
   font-family: "Open Sans", sans-serif;
   #root {
+    @include flex-col-spaced;
     width: 100%;
     background-color: beige;
-    @include flex-col-spaced;
+    position: relative;
   }
 }

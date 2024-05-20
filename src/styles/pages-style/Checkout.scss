@@ -2,7 +2,7 @@
   @include flex-row-centered;
   gap: 100px;
   width: 100%;
-  min-height: calc(100vh - 145px);
+  min-height: calc(100vh - $header-height);
   margin: 20px 0;
   .order-success {
     color: $success;
