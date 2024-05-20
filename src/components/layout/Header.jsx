@@ -15,6 +15,7 @@ import { useCartContext } from "../../contexts/CartContext";
 import { useResponsivityContext } from "../../contexts/ResponsivityContext";
 import { useProductsContext } from "../../contexts/ProductsContext";
 import { useEffect, useRef } from "react";
+import { useSearchContext } from "../../contexts/SearchContext";
 
 const Header = () => {
   const { handleSidebarClick, sidebarRef } = useSidebarContext();
@@ -23,6 +24,7 @@ const Header = () => {
   const { isMobile } = useResponsivityContext();
   const { categories } = useProductsContext();
   const searchRef = useRef();
+  const { searchTerm, setSearchTerm, searchResults } = useSearchContext();
 
   useEffect(() => {
     searchRef.current.focus();
@@ -50,12 +52,33 @@ const Header = () => {
             <form className="search-form">
               <FontAwesomeIcon className="glas-icon" icon={faMagnifyingGlass} />
               <input
+                value={searchTerm}
                 ref={searchRef}
                 className="search-input"
                 type="text"
                 placeholder="search"
+                onChange={(e) => setSearchTerm(e.target.value)}
               />
             </form>
+            {searchTerm.length > 0 && (
+              <div className="search-result-div">
+                <ul>
+                  {searchResults.length > 0 ? (
+                    searchResults.map((result) => (
+                      <li key={result.id} onClick={() => setSearchTerm("")}>
+                        <Link to={`/store/product-detail/${result.id}`}>
+                          {result.title.slice(0, 17) + " ..."}
+                        </Link>
+                      </li>
+                    ))
+                  ) : (
+                    <li>
+                      <b>No matching</b>
+                    </li>
+                  )}
+                </ul>
+              </div>
+            )}
           </div>
           <div className="nav-right">
             <Link aria-label="credentials" to={isLoggedIn ? "/user" : "/auth"}>

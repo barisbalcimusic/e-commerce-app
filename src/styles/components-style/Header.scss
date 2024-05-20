@@ -14,7 +14,6 @@ header {
     width: 100%;
     height: 100%;
     box-sizing: border-box;
-
     .nav-top {
       .logo-link {
         width: 50px;
@@ -48,15 +47,16 @@ header {
         }
       }
       .nav-middle {
-        @include flex-row-spaced;
+        display: flex;
+        flex-direction: column;
         width: 100%;
-        height: 40px;
         gap: 5px;
+        position: relative;
         .search-form {
           display: flex;
           align-items: center;
           width: 100%;
-          height: 100%;
+          height: 40px;
           position: relative;
           .glas-icon {
             font-size: 20px;
@@ -66,12 +66,46 @@ header {
           .search-input {
             width: 100%;
             height: 100%;
-            text-align: center;
+            text-indent: 30px;
             border: none;
             border-radius: 5px;
             &:focus {
               outline: none;
               box-shadow: 0px 0px 5px 2px $hover;
+            }
+          }
+        }
+        .search-result-div {
+          width: 100%;
+          background-color: white;
+          z-index: 500;
+          position: absolute;
+          top: 45px;
+          border: solid 1px gray;
+          border-radius: 5px;
+          ul {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+            width: 100%;
+            margin: 0;
+            li {
+              display: flex;
+              align-items: center;
+              width: 100%;
+              height: 40px;
+              text-indent: 30px;
+              cursor: pointer;
+              &:hover {
+                background-color: $hover;
+              }
+              a {
+                display: flex;
+                align-items: center;
+                width: 100%;
+                height: 100%;
+                color: black;
+              }
             }
           }
         }

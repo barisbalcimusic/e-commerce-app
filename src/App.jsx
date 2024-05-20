@@ -6,6 +6,7 @@ import SidebarContextProvider from "./contexts/SidebarContext";
 import AuthContextProvider from "./contexts/AuthContext";
 import CartContextProvider from "./contexts/CartContext";
 import ResponsivityContextProvider from "./contexts/ResponsivityContext";
+import SearchProvider from "./contexts/SearchContext";
 import routes from "./routes/routes";
 
 const App = () => {
@@ -15,17 +16,19 @@ const App = () => {
         <AuthContextProvider>
           <CartContextProvider>
             <ResponsivityContextProvider>
-              <Layout>
-                <Routes>
-                  {routes.map((route) => (
-                    <Route
-                      key={route.id}
-                      path={route.path}
-                      element={route.element}
-                    />
-                  ))}
-                </Routes>
-              </Layout>
+              <SearchProvider>
+                <Layout>
+                  <Routes>
+                    {routes.map((route) => (
+                      <Route
+                        key={route.id}
+                        path={route.path}
+                        element={route.element}
+                      />
+                    ))}
+                  </Routes>
+                </Layout>
+              </SearchProvider>
             </ResponsivityContextProvider>
           </CartContextProvider>
         </AuthContextProvider>
