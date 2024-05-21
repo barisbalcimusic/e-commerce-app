@@ -1,6 +1,6 @@
 # [BuyTheWay](https://buytheway.netlify.app)
 
-This project is a final project developed as part of my web development course's SPA (Single Page Application) module. It is designed as an online shopping platform where users can add products to their cart and place orders after logging in.
+"This project is a final project developed as part of my web development course's SPA (Single Page Application) module. It is designed as an online shopping platform where users can search for products, add them to their cart, and place orders after logging in."
 
 ## User Login
 
