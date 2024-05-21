@@ -5,6 +5,7 @@ const SidebarContext = createContext();
 const SidebarContextProvider = ({ children }) => {
   const [isSidebarOpened, setIsSidebarOpened] = useState(false);
   const sidebarRef = useRef();
+  const headerRef = useRef();
 
   const handleSidebarClick = () => {
     sidebarRef.current.style.transform = `translateX(${
@@ -15,7 +16,7 @@ const SidebarContextProvider = ({ children }) => {
 
   return (
     <SidebarContext.Provider
-      value={{ isSidebarOpened, handleSidebarClick, sidebarRef }}
+      value={{ isSidebarOpened, handleSidebarClick, sidebarRef, headerRef }}
     >
       {children}
     </SidebarContext.Provider>

@@ -18,20 +18,20 @@ import { useEffect, useRef } from "react";
 import { useSearchContext } from "../../contexts/SearchContext";
 
 const Header = () => {
-  const { handleSidebarClick, sidebarRef } = useSidebarContext();
+  const { handleSidebarClick, sidebarRef, headerRef } = useSidebarContext();
   const { isLoggedIn } = useAuthContext();
   const { cart } = useCartContext();
   const { isMobile } = useResponsivityContext();
   const { categories } = useProductsContext();
-  const searchRef = useRef();
   const { searchTerm, setSearchTerm, searchResults } = useSearchContext();
+  const searchRef = useRef();
 
   useEffect(() => {
     searchRef.current.focus();
   }, []);
 
   return (
-    <header>
+    <header ref={headerRef}>
       <nav>
         <div className="nav-top">
           <Link className="logo-link" to="/">

@@ -185,6 +185,7 @@ aside {
   width: 100vw;
   background-color: $secondary;
   position: absolute;
+  min-height: 100vh;
   z-index: 2;
   top: $header-height;
   left: -100vw;
