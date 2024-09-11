@@ -1,4 +1,5 @@
 # [BuyTheWay](https://buy-the-way.netlify.app/)
+**Update (September 11, 2024):** Due to an issue with the API, there is currently a problem fetching the images. As a result, product images are temporarily unavailable on the screen.
 
 This project is a final project developed as part of my web development course's SPA (Single Page Application) module. It is designed as an online shopping platform where users can search for products, add them to their cart, and place orders after logging in.
 
