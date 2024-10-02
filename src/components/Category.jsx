@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { useResponsivityContext } from "../../contexts/ResponsivityContext";
+import { useResponsivityContext } from "../contexts/ResponsivityContext";
 
 const Category = ({ category, products }) => {
   const { isMobile } = useResponsivityContext();

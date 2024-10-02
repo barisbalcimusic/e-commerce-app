@@ -1,17 +1,20 @@
 import { useEffect, useState } from "react";
-import { useCartContext } from "../contexts/CartContext";
 import { useNavigate } from "react-router-dom";
+import { useCartContext } from "../contexts/CartContext";
 import { useAuthContext } from "../contexts/AuthContext";
 
 const Checkout = () => {
-  const { cart, total } = useCartContext();
   const [formData, setFormData] = useState(null);
   const [success, setSuccess] = useState(false);
+
   //empty the cart
   const { setCart } = useCartContext();
   const [count, setCount] = useState(3);
-  const navigate = useNavigate();
+
+  const { cart, total } = useCartContext();
   const { isLoggedIn } = useAuthContext();
+
+  const navigate = useNavigate();
 
   //if not logged in, redirect to login
   useEffect(() => {
@@ -20,25 +23,25 @@ const Checkout = () => {
     }
   });
 
-  useEffect(() => {
-    if (formData) {
-      const fetchData = async () => {
-        try {
-          const res = await fetch("https://formspree.io/f/xrgndllw", {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify(formData),
-          });
-          setSuccess(true);
-        } catch (error) {
-          console.log(error);
-        }
-      };
-      fetchData();
-    }
-  }, [formData]);
+  // useEffect(() => {
+  //   if (formData) {
+  //     const fetchData = async () => {
+  //       try {
+  //         const res = await fetch("https://formspree.io/f/xrgndllw", {
+  //           method: "POST",
+  //           headers: {
+  //             "Content-Type": "application/json",
+  //           },
+  //           body: JSON.stringify(formData),
+  //         });
+  //         setSuccess(true);
+  //       } catch (error) {
+  //         console.log(error);
+  //       }
+  //     };
+  //     fetchData();
+  //   }
+  // }, [formData]);
 
   //if success, show message and start countdown
   let countdown;

@@ -5,8 +5,9 @@ const SearchContext = createContext();
 
 const SearchProvider = ({ children }) => {
   const [searchTerm, setSearchTerm] = useState("");
-  const { products } = useProductsContext();
   const [searchResults, setFilteredProducts] = useState([]);
+
+  const { products } = useProductsContext();
 
   useEffect(() => {
     if (searchTerm) {
@@ -19,8 +20,7 @@ const SearchProvider = ({ children }) => {
 
   return (
     <SearchContext.Provider
-      value={{ searchTerm, setSearchTerm, searchResults }}
-    >
+      value={{ searchTerm, setSearchTerm, searchResults }}>
       {children}
     </SearchContext.Provider>
   );

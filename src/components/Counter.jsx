@@ -1,5 +1,5 @@
 import { useEffect, useReducer } from "react";
-import { useCartContext } from "../../contexts/CartContext";
+import { useCartContext } from "../contexts/CartContext";
 
 const Counter = ({ product }) => {
   const { cart, setCart } = useCartContext();
@@ -47,8 +47,7 @@ const Counter = ({ product }) => {
     <div className="counter">
       <button
         onClick={() => dispatch("decrement")}
-        disabled={state <= 1 ? true : false}
-      >
+        disabled={state <= 1 ? true : false}>
         -
       </button>
       <p>{state}</p>

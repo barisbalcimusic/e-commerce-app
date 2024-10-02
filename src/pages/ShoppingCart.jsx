@@ -1,13 +1,15 @@
 import { useEffect, useState } from "react";
-import ProductInCart from "../components/product/ProductInCart";
+import { Link, useNavigate } from "react-router-dom";
+import ProductInCart from "../components/ProductInCart";
 import { useCartContext } from "../contexts/CartContext";
 import { useAuthContext } from "../contexts/AuthContext";
-import { Link, useNavigate } from "react-router-dom";
 
 const ShoppingCart = () => {
+  const [warning, setWarning] = useState(false);
+
   const { cart, total, setTotal } = useCartContext();
   const { isLoggedIn } = useAuthContext();
-  const [warning, setWarning] = useState(false);
+
   const navigate = useNavigate();
 
   useEffect(() => {

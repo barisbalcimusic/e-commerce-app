@@ -1,6 +1,6 @@
-import Categories from "../components/product/Categories";
+import Categories from "../components/Categories";
+import HighlightedProducts from "../components/HighlightedProducts";
 import { useSidebarContext } from "../contexts/SidebarContext";
-import HighlightedProducts from "../components/product/HighlightedProducts";
 
 const Home = () => {
   const { isSidebarOpened, handleSidebarClick } = useSidebarContext();
@@ -8,8 +8,7 @@ const Home = () => {
   return (
     <div
       className="home-container"
-      onLoad={isSidebarOpened ? () => handleSidebarClick() : null}
-    >
+      onLoad={isSidebarOpened ? () => handleSidebarClick() : null}>
       <div className="categories-div">
         <h2>Categories</h2>
         <Categories />

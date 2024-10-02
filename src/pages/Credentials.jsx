@@ -1,13 +1,14 @@
 import { useEffect, useState } from "react";
-import LoginForm from "../components/forms/LoginForm";
-import RegistrationForm from "../components/forms/RegistrationForm";
 import { useNavigate } from "react-router-dom";
+import LoginForm from "../components/LoginForm";
+import RegistrationForm from "../components/RegistrationForm";
 
 const Credentials = () => {
   const [selection, setSelection] = useState(null);
   const [registrationSuccess, setRegistrationSuccess] = useState(false);
   const [loginSuccess, setLoginSuccess] = useState(false);
   const [count, setCount] = useState(3);
+
   const navigate = useNavigate();
 
   const handleFocus = (e) => {
@@ -15,7 +16,7 @@ const Credentials = () => {
     e.target.checked = true;
   };
 
-  //if success, show message and start countdown
+  // if success, show message and start countdown
   let countdown;
   useEffect(() => {
     if (registrationSuccess || loginSuccess) {
@@ -25,7 +26,7 @@ const Credentials = () => {
     }
   }, [registrationSuccess, loginSuccess]);
 
-  //when countdown ends, redirect to home (or back to checkout)
+  // when countdown ends, redirect to home (or back to checkout)
   useEffect(() => {
     if (count <= 0) {
       clearInterval(countdown);

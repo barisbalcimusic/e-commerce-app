@@ -1,17 +1,16 @@
 import { useParams } from "react-router-dom";
-import { useProductsContext } from "../contexts/ProductsContext";
 import AddButton from "../components/AddButton";
-import { useEffect } from "react";
+import { useProductsContext } from "../contexts/ProductsContext";
 
 const ProductDetail = () => {
-  const { id } = useParams();
   const { products } = useProductsContext();
+  const { id } = useParams();
 
   let filteredProduct;
   if (products) {
-    filteredProduct = products.filter(
+    filteredProduct = products.find(
       (product) => parseInt(product.id) === parseInt(id)
-    )[0];
+    );
   }
 
   return filteredProduct ? (
@@ -28,8 +27,7 @@ const ProductDetail = () => {
         <p
           className={
             filteredProduct.discountPercentage > 0 ? "old-price" : "price"
-          }
-        >
+          }>
           {filteredProduct.price} ${" "}
         </p>
         {filteredProduct.discountPercentage > 0 && (

@@ -96,11 +96,12 @@ const Header = () => {
               <li>
                 <Link to="/store">ALL PRODUCTS</Link>
               </li>
-              {categories.map((category, index) => (
-                <li key={index}>
-                  <NavLink to={`/store/${category}`}>{category}</NavLink>
-                </li>
-              ))}
+              {categories &&
+                categories.map((category, index) => (
+                  <li key={index}>
+                    <NavLink to={`/store/${category}`}>{category}</NavLink>
+                  </li>
+                ))}
             </ul>
           </div>
         ) : null}

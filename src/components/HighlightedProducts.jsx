@@ -1,4 +1,4 @@
-import { useProductsContext } from "../../contexts/ProductsContext";
+import { useProductsContext } from "../contexts/ProductsContext";
 import HighlightedProduct from "./HighlightedProduct";
 
 const HighlightedProducts = ({ type }) => {

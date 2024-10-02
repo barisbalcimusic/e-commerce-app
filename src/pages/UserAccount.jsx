@@ -1,6 +1,6 @@
+import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuthContext } from "../contexts/AuthContext";
-import { useEffect } from "react";
 
 const UserAccount = () => {
   const { isLoggedIn, setIsLoggedIn, loggedUser } = useAuthContext();

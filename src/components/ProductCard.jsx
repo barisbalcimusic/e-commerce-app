@@ -1,6 +1,6 @@
+import "../App.scss";
 import { Link } from "react-router-dom";
-import "../../App.scss";
-import AddButton from "../AddButton";
+import AddButton from "./AddButton";
 
 const ProductCard = ({ product }) => {
   return (

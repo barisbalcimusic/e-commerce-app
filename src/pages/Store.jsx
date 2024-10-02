@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import Products from "../components/product/Products";
+import Products from "../components/Products";
 import { useProductsContext } from "../contexts/ProductsContext";
 
 const Store = () => {

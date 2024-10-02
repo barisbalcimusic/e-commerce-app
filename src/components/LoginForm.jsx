@@ -1,7 +1,7 @@
-import "../../App.scss";
-import fetchUserData from "../data/fetchUserData";
+import "../App.scss";
 import { useEffect, useState } from "react";
-import { useAuthContext } from "../../contexts/AuthContext";
+import fetchUserData from "../utils/services/fetchUserData";
+import { useAuthContext } from "../contexts/AuthContext";
 
 const LoginForm = ({ setLoginSuccess }) => {
   const [email, setEmail] = useState("");

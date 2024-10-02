@@ -3,6 +3,7 @@ import { useCartContext } from "../contexts/CartContext";
 
 const AddButton = ({ product }) => {
   const { cart, setCart } = useCartContext();
+  
   const buttonRef = useRef();
 
   const addToCart = () => {

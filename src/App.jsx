@@ -1,13 +1,14 @@
 import "./App.scss";
+import { Route, Routes } from "react-router-dom";
 import Layout from "./components/layout/Layout";
-import { Route, Routes, useParams } from "react-router-dom";
+import routes from "./routes/routes";
+
 import ProductsContextProvider from "./contexts/ProductsContext";
 import SidebarContextProvider from "./contexts/SidebarContext";
 import AuthContextProvider from "./contexts/AuthContext";
 import CartContextProvider from "./contexts/CartContext";
 import ResponsivityContextProvider from "./contexts/ResponsivityContext";
 import SearchProvider from "./contexts/SearchContext";
-import routes from "./routes/routes";
 
 const App = () => {
   return (
