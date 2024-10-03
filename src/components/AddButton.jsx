@@ -3,21 +3,26 @@ import { useCartContext } from "../contexts/CartContext";
 
 const AddButton = ({ product }) => {
   const { cart, setCart } = useCartContext();
-  
+
   const buttonRef = useRef();
 
-  const addToCart = () => {
+  const { id, price } = product;
+
+  const handleAddToCart = () => {
     let productToAdd;
-    if (!cart.find((curr) => curr.id === product.id)) {
-      productToAdd = { ...product, amount: 1 };
+
+    // check if the product is already in cart
+    const existingProduct = cart.find((curr) => curr.id === id);
+
+    if (!existingProduct) {
+      productToAdd = { id, price: parseFloat(price), amount: 1 };
       setCart([...cart, productToAdd]);
     } else {
-      //find the product in cart
-      const existingProduct = cart.find((curr) => curr.id === product.id);
-      //get the amount of the product
+      // get the amount of the product
       const lastAmount = parseInt(existingProduct.amount);
+      // update the amount of the product
       setCart([
-        ...cart.filter((curr) => curr.id !== product.id),
+        ...cart.filter((curr) => curr.id !== id),
         { ...existingProduct, amount: lastAmount + 1 },
       ]);
     }
@@ -27,7 +32,7 @@ const AddButton = ({ product }) => {
   };
 
   return (
-    <button ref={buttonRef} onClick={addToCart} className="add-button">
+    <button ref={buttonRef} onClick={handleAddToCart} className="add-button">
       Add to Cart
     </button>
   );

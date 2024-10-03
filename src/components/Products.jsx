@@ -6,7 +6,11 @@ const Products = ({ products }) => {
       <div className="products-div">
         {products ? (
           products.map((product) => (
-            <ProductCard key={product.id} product={product} />
+            <ProductCard
+              key={product.id}
+              productId={product.id}
+              product={product}
+            />
           ))
         ) : (
           <p>Loading...</p>

@@ -2,7 +2,7 @@ import "../App.scss";
 import { Link } from "react-router-dom";
 import AddButton from "./AddButton";
 
-const ProductCard = ({ product }) => {
+const ProductCard = ({ productId, product }) => {
   return (
     <div className="product-card">
       <div className="product-image">
@@ -37,7 +37,7 @@ const ProductCard = ({ product }) => {
           )}
         </div>
         <div className="button-div">
-          <AddButton product={product} />
+          <AddButton productInfo={{ productId, product }} />
         </div>
       </div>
     </div>

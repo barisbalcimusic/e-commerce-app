@@ -29,7 +29,6 @@ const Checkout = () => {
       postOrder(userData.data.id, total, order)
         .then((data) => {
           setSuccess(true);
-          console.log(data);
         })
         .catch((error) => console.error(error));
     }
@@ -58,7 +57,7 @@ const Checkout = () => {
   const handleOrder = (e) => {
     setIsSubmitted(true);
     e.preventDefault();
-    //!
+
     const order = [];
     cart.map((product) =>
       order.push({ id: product.id, amount: product.amount })
