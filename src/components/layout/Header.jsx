@@ -19,12 +19,16 @@ import { useSearchContext } from "../../contexts/SearchContext";
 
 const Header = () => {
   const { handleSidebarClick, sidebarRef, headerRef } = useSidebarContext();
-  const { isLoggedIn } = useAuthContext();
+  const { isLoggedIn, userData } = useAuthContext();
   const { cart } = useCartContext();
   const { isMobile } = useResponsivityContext();
   const { categories } = useProductsContext();
   const { searchTerm, setSearchTerm, searchResults } = useSearchContext();
+  const {} = useAuthContext();
+
   const searchRef = useRef();
+
+  console.log(userData);
 
   useEffect(() => {
     searchRef.current.focus();
@@ -81,6 +85,7 @@ const Header = () => {
             )}
           </div>
           <div className="nav-right">
+            <p>Hello {userData ? userData.data.email : "Guest"}</p>
             <Link aria-label="credentials" to={isLoggedIn ? "/user" : "/auth"}>
               <FontAwesomeIcon className="user-icon" icon={faUser} />
             </Link>

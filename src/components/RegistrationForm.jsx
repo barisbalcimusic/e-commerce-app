@@ -1,6 +1,6 @@
 import "../App.scss";
 import { useEffect, useState } from "react";
-import registerUser from "../utils/services/registerUser";
+import register from "../utils/services/register";
 
 const RegistrationForm = ({ setRegistrationSuccess }) => {
   const [password, setPassword] = useState("");
@@ -23,7 +23,7 @@ const RegistrationForm = ({ setRegistrationSuccess }) => {
   useEffect(() => {
     // register if submitted
     if (isSubmitted)
-      registerUser(email, password)
+      register(email, password)
         .then((data) => {
           if (data) setRegistrationSuccess(true);
         })
