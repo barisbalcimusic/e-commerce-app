@@ -28,8 +28,6 @@ const Header = () => {
 
   const searchRef = useRef();
 
-  console.log(userData);
-
   useEffect(() => {
     searchRef.current.focus();
   }, []);
@@ -85,7 +83,7 @@ const Header = () => {
             )}
           </div>
           <div className="nav-right">
-            <p>Hello {userData ? userData.data.email : "Guest"}</p>
+            <p>Hello {userData ? userData.data.firstname : "Guest"}</p>
             <Link aria-label="credentials" to={isLoggedIn ? "/user" : "/auth"}>
               <FontAwesomeIcon className="user-icon" icon={faUser} />
             </Link>

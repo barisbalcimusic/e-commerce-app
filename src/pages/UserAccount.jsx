@@ -28,7 +28,7 @@ const UserAccount = () => {
 
   return (
     <div className="user-account-container">
-      {userData && <h2>Welcome {userData.data.email}!</h2>}
+      {userData && <h2>Welcome {userData.data.firstname}!</h2>}
       <button onClick={handleLogout} className="button-style ">
         Sign out
       </button>

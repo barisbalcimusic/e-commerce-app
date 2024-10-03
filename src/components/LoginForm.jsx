@@ -4,8 +4,10 @@ import { useAuthContext } from "../contexts/AuthContext";
 import login from "../utils/services/login";
 
 const LoginForm = ({ setLoginSuccess }) => {
+  // user input states
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [loginWarning, setLoginWarning] = useState(false);
   const { setIsLoggedIn } = useAuthContext();

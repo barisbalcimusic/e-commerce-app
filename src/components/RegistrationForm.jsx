@@ -3,8 +3,12 @@ import { useEffect, useState } from "react";
 import register from "../utils/services/register";
 
 const RegistrationForm = ({ setRegistrationSuccess }) => {
+  // user input states
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
+
   const [passwordWarning, setPasswordWarning] = useState("");
   const [isSubmitted, setIsSubmitted] = useState(false);
 
@@ -23,9 +27,12 @@ const RegistrationForm = ({ setRegistrationSuccess }) => {
   useEffect(() => {
     // register if submitted
     if (isSubmitted)
-      register(email, password)
+      register(firstName, lastName, email, password)
         .then((data) => {
-          if (data) setRegistrationSuccess(true);
+          if (data) {
+            setRegistrationSuccess(true);
+            console.log(data);
+          }
         })
         .catch((err) => console.error(err));
   }, [isSubmitted]);
@@ -39,16 +46,20 @@ const RegistrationForm = ({ setRegistrationSuccess }) => {
   return (
     <form onSubmit={handleSubmit} className="registration-form">
       <input
+        value={firstName}
         className="form-input"
         type="text"
         placeholder="First name"
         required
+        onChange={(e) => setFirstName(e.target.value)}
       />
       <input
+        value={lastName}
         className="form-input"
         type="text"
         placeholder="Last name"
         required
+        onChange={(e) => setLastName(e.target.value)}
       />
       <input
         value={email}

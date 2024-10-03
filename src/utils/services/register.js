@@ -1,14 +1,14 @@
-const register = async (email, password) => {
+const register = async (firstName, lastName, email, password) => {
   try {
-    if (!email || !password) {
-      throw new Error("Email and password are required.");
+    if (!firstName || !lastName || !email || !password) {
+      throw new Error("All fields are required.");
     }
     const res = await fetch("http://localhost:3000/register", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ email, password }),
+      body: JSON.stringify({ firstName, lastName, email, password }),
     });
 
     if (!res.ok) {
