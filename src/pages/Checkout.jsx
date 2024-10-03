@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Form, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useCartContext } from "../contexts/CartContext";
 import { useAuthContext } from "../contexts/AuthContext";
 import postOrder from "../utils/services/postOrder";
@@ -20,7 +20,6 @@ const Checkout = () => {
   const { userData } = useAuthContext();
 
   const { cart, setCart, total } = useCartContext();
-  const { isLoggedIn } = useAuthContext();
 
   const navigate = useNavigate();
 
@@ -58,9 +57,13 @@ const Checkout = () => {
     setIsSubmitted(true);
     e.preventDefault();
 
-    const order = [];
+    const orderedProducts = [];
     cart.map((product) =>
-      order.push({ id: product.id, amount: product.amount })
+      orderedProducts.push({
+        id: product.id,
+        amount: product.amount,
+        singlePrice: product.price,
+      })
     );
     setOrder({
       adress,
@@ -69,7 +72,7 @@ const Checkout = () => {
       postalCode,
       country,
       payment,
-      order,
+      orderedProducts,
     });
   };
 
