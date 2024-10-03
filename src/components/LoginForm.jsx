@@ -2,13 +2,13 @@ import "../App.scss";
 import { useEffect, useState } from "react";
 import { useAuthContext } from "../contexts/AuthContext";
 import login from "../utils/services/login";
-import { useNavigate } from "react-router-dom";
 
 const LoginForm = ({ setLoginSuccess }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [loginWarning, setLoginWarning] = useState(false);
+  const { setIsLoggedIn } = useAuthContext();
 
   const { setUserData } = useAuthContext();
 
@@ -23,6 +23,7 @@ const LoginForm = ({ setLoginSuccess }) => {
         .then((data) => {
           setUserData(data);
           setLoginSuccess(true);
+          setIsLoggedIn(true);
         })
         .catch((error) => {
           console.error(error);
