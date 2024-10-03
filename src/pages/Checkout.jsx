@@ -13,10 +13,11 @@ const Checkout = () => {
   const [country, setCountry] = useState("");
   const [payment, setPayment] = useState("invoice");
 
-  const [formData, setFormData] = useState({});
+  const [order, setOrder] = useState({});
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [success, setSuccess] = useState(false);
   const [count, setCount] = useState(3);
+  const { userData } = useAuthContext();
 
   const { cart, setCart, total } = useCartContext();
   const { isLoggedIn } = useAuthContext();
@@ -25,7 +26,7 @@ const Checkout = () => {
 
   useEffect(() => {
     if (isSubmitted) {
-      postOrder(formData)
+      postOrder(userData.data.id, total, order)
         .then((data) => {
           setSuccess(true);
           console.log(data);
@@ -57,11 +58,12 @@ const Checkout = () => {
   const handleOrder = (e) => {
     setIsSubmitted(true);
     e.preventDefault();
+    //!
     const order = [];
     cart.map((product) =>
       order.push({ id: product.id, amount: product.amount })
     );
-    setFormData({
+    setOrder({
       adress,
       addition,
       city,
