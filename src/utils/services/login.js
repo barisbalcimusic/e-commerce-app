@@ -4,7 +4,7 @@ const login = async (email, password) => {
       throw new Error("Email and password are required.");
     }
 
-    const res = await fetch("http://localhost:3000/login", {
+    const res = await fetch("http://localhost:3000/auth/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

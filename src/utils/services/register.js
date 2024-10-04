@@ -3,7 +3,7 @@ const register = async (firstName, lastName, email, password) => {
     if (!firstName || !lastName || !email || !password) {
       throw new Error("All fields are required.");
     }
-    const res = await fetch("http://localhost:3000/register", {
+    const res = await fetch("http://localhost:3000/auth/register", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
