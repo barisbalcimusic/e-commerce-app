@@ -19,10 +19,12 @@ const Credentials = () => {
   // if success, show message and start countdown
   let countdown;
   useEffect(() => {
-    if (registrationSuccess || loginSuccess) {
+    if (registrationSuccess) {
       countdown = setInterval(() => {
         setCount((count) => count - 1);
       }, 1000);
+    } else if (loginSuccess) {
+      navigate("/");
     }
   }, [registrationSuccess, loginSuccess]);
 

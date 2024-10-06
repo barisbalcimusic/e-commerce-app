@@ -18,12 +18,12 @@ const ProductsContextProvider = ({ children }) => {
   const categories = [];
   if (products)
     products.forEach((product) => {
-      if (!categories.includes(product.category))
-        categories.push(product.category);
+      if (!categories.includes(product.product_category))
+        categories.push(product.product_category);
     });
 
   return (
-    <ProductsContext.Provider value={{ products }}>
+    <ProductsContext.Provider value={{ products, categories }}>
       {children}
     </ProductsContext.Provider>
   );

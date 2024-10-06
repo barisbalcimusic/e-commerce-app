@@ -7,14 +7,16 @@ const HighlightedProducts = ({ type }) => {
   //filter best rated products
   let filteredProducts;
   if (products && type === "best-rated") {
-    filteredProducts = products.filter((product) => product.rating > 4.8);
+    filteredProducts = products.filter(
+      (product) => product.product_rating > 4.8
+    );
   } else if (products && type === "discounted") {
     filteredProducts = products.filter(
-      (product) => product.discountPercentage > 0
+      (product) => product.product_discountPercentage > 0
     );
   } else if (products && type === "bestseller") {
     const sortedProducts = [...products].sort(
-      (a, b) => b.soldAmount - a.soldAmount
+      (a, b) => b.product_soldAmount - a.product_soldAmount
     );
     filteredProducts = sortedProducts.slice(0, 5);
   }
@@ -22,7 +24,7 @@ const HighlightedProducts = ({ type }) => {
     <div className="highlights">
       {filteredProducts
         ? filteredProducts.map((product) => (
-            <HighlightedProduct key={product.id} product={product} />
+            <HighlightedProduct key={product.product_id} product={product} />
           ))
         : "loading..."}
     </div>

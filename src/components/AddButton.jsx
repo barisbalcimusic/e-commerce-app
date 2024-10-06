@@ -6,24 +6,28 @@ const AddButton = ({ product }) => {
 
   const buttonRef = useRef();
 
-  const { id, price } = product;
+  const { product_id, product_price } = product;
 
   const handleAddToCart = () => {
     let productToAdd;
 
     // check if the product is already in cart
-    const existingProduct = cart.find((curr) => curr.id === id);
+    const existingProduct = cart.find((curr) => curr.product_id === product_id);
 
     if (!existingProduct) {
-      productToAdd = { id, price: parseFloat(price), amount: 1 };
+      productToAdd = {
+        product_id,
+        product_price: parseFloat(product_price),
+        product_amount: 1,
+      };
       setCart([...cart, productToAdd]);
     } else {
       // get the amount of the product
-      const lastAmount = parseInt(existingProduct.amount);
+      const lastAmount = parseInt(existingProduct.product_amount);
       // update the amount of the product
       setCart([
-        ...cart.filter((curr) => curr.id !== id),
-        { ...existingProduct, amount: lastAmount + 1 },
+        ...cart.filter((curr) => curr.product_id !== product_id),
+        { ...existingProduct, product_amount: lastAmount + 1 },
       ]);
     }
     buttonRef.current.style.background = "green";

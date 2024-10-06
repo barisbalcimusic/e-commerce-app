@@ -9,35 +9,37 @@ const ProductDetail = () => {
   let filteredProduct;
   if (products) {
     filteredProduct = products.find(
-      (product) => parseInt(product.id) === parseInt(id)
+      (product) => parseInt(product.product_id) === parseInt(id)
     );
   }
 
   return filteredProduct ? (
     <div className="product-detail">
-      <p className="title">{filteredProduct.title}</p>
-      <img src={filteredProduct.thumbnail} alt="product-picture" />
-      <p>{filteredProduct.description}</p>
+      <p className="title">{filteredProduct.product_title}</p>
+      <img src={filteredProduct.product_thumbnail} alt="product-picture" />
+      <p>{filteredProduct.product_description}</p>
       <p>
         <b>Rating: </b>
-        {filteredProduct.rating}
+        {filteredProduct.product_rating}
       </p>
       <div className="price-info">
         {" "}
         <p
           className={
-            filteredProduct.discountPercentage > 0 ? "old-price" : "price"
+            filteredProduct.product_discountPercentage > 0
+              ? "old-price"
+              : "price"
           }>
-          {filteredProduct.price} ${" "}
+          {filteredProduct.product_price} ${" "}
         </p>
-        {filteredProduct.discountPercentage > 0 && (
+        {filteredProduct.product_discountPercentage > 0 && (
           <p className="new-price">
             {
               //calculate discounted price
               (
-                filteredProduct.price -
-                filteredProduct.price *
-                  (filteredProduct.discountPercentage / 100)
+                filteredProduct.product_price -
+                filteredProduct.product_price *
+                  (filteredProduct.product_discountPercentage / 100)
               ).toFixed(2)
             }{" "}
             $

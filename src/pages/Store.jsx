@@ -12,7 +12,7 @@ const Store = () => {
     ) : (
       <Products
         products={products.filter(
-          (product) => product.category === url.category
+          (product) => product.product_category === url.category
         )}
       />
     )

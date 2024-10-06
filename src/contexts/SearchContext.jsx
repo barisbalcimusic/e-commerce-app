@@ -12,7 +12,7 @@ const SearchProvider = ({ children }) => {
   useEffect(() => {
     if (searchTerm) {
       const filteredProducts = products.filter((product) =>
-        product.title.toLowerCase().includes(searchTerm.toLowerCase())
+        product.product_title.toLowerCase().includes(searchTerm.toLowerCase())
       );
       setFilteredProducts(filteredProducts);
     }

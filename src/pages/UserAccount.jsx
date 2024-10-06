@@ -1,43 +1,66 @@
-import { useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 import { useAuthContext } from "../contexts/AuthContext";
 import logout from "../utils/services/logout";
+import OrderList from "../components/OrderList";
+import { useNavigate } from "react-router-dom";
+import Adresses from "../components/Adresses";
+import Security from "../components/Security";
 
 const UserAccount = () => {
-  const { isLoggedIn, setIsLoggedIn, userData, setUserData } = useAuthContext();
+  const [renderedComponent, setRenderedComponent] = useState(null);
+  const { setIsLoggedIn, userData, setUserData } = useAuthContext();
   const navigate = useNavigate();
-
-  //if not logged in, redirect to login
-  useEffect(() => {
-    if (!isLoggedIn) {
-      navigate("/auth");
-    }
-  }, [isLoggedIn]);
 
   const handleLogout = () => {
     logout()
-      .then((data) => {
-        console.log(data);
+      .then(() => {
         setIsLoggedIn(false);
         setUserData(null);
+        navigate("/");
       })
       .catch((error) => {
         console.error(error);
       });
   };
 
-  return (
+  const selectRenderedComponent = () => {
+    switch (renderedComponent) {
+      case "orders":
+        return <OrderList />;
+      case "security":
+        return <Security />;
+      case "adresses":
+        return <Adresses />;
+      default:
+        return null;
+    }
+  };
+
+  return renderedComponent ? (
+    <div className="user-setting-container">{selectRenderedComponent()}</div>
+  ) : (
     <div className="user-account-container">
-      {userData && <h2>Welcome {userData.data.firstname}!</h2>}
-      <button onClick={handleLogout} className="button-style ">
-        Sign out
-      </button>
+      <h2>Welcome {userData.data.firstname || "Guest"}!</h2>
       <div className="user-settings">
-        <div className="user-setting">My Orders</div>
-        <div className="user-setting">Login and Security</div>
-        <div className="user-setting">Adresses</div>
-        <div className="user-setting">Payment Methods</div>
-        <div className="user-setting">Contact us</div>
+        <div
+          className="user-setting"
+          onClick={() => setRenderedComponent("orders")}>
+          My Orders
+        </div>
+        <div
+          className="user-setting"
+          onClick={() => setRenderedComponent("security")}>
+          Login and Security
+        </div>
+        <div
+          className="user-setting"
+          onClick={() => setRenderedComponent("adresses")}>
+          Adresses
+        </div>
+
+        <div className="user-setting" onClick={handleLogout}>
+          Logout
+        </div>
       </div>
     </div>
   );

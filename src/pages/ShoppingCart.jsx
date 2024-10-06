@@ -15,7 +15,8 @@ const ShoppingCart = () => {
   useEffect(() => {
     //calculate total (price*amount)
     const totalPrice = cart.reduce(
-      (acc, product) => acc + product.price * parseInt(product.amount),
+      (acc, product) =>
+        acc + product.product_price * parseInt(product.product_amount),
       0
     );
     setTotal(totalPrice);
@@ -43,7 +44,7 @@ const ShoppingCart = () => {
           </thead>
           <tbody>
             {cart.map((product) => (
-              <ProductInCart key={product.id} product={product} />
+              <ProductInCart key={product.product_id} product={product} />
             ))}
             <tr>
               <td className="total-td" colSpan={3}>

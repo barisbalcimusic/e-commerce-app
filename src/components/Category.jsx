@@ -5,7 +5,7 @@ const Category = ({ category, products }) => {
   const { isMobile } = useResponsivityContext();
 
   const productsFromCategory = products
-    .filter((curr) => curr.category === category)
+    .filter((curr) => curr.product_category === category)
     .slice(0, 3);
 
   return (
@@ -13,10 +13,10 @@ const Category = ({ category, products }) => {
       <div className="category-name">{category}</div>
       {!isMobile &&
         productsFromCategory.map((product) => (
-          <div key={product.id} className="category-img-div">
+          <div key={product.product_id} className="category-img-div">
             <img
               className="category-image"
-              src={product.thumbnail}
+              src={product.product_thumbnail}
               alt="category-image"
             />
           </div>

@@ -2,20 +2,26 @@ import { Link } from "react-router-dom";
 
 const HighlightedProduct = ({ product }) => {
   return (
-    <Link to={`store/product-detail/${product.id}`} className="highlight">
-      <img src={product.thumbnail} alt="product-thumbnail" />
+    <Link
+      to={`store/product-detail/${product.product_id}`}
+      className="highlight">
+      <img src={product.product_thumbnail} alt="product-thumbnail" />
       <div className="product-infos">
-        <p className="title">{product.title}</p>
-        <p className={product.discountPercentage > 0 ? "old-price" : "price"}>
-          {product.price} $
+        <p className="title">{product.product_title}</p>
+        <p
+          className={
+            product.product_discountPercentage > 0 ? "old-price" : "price"
+          }>
+          {product.product_price} $
         </p>
-        {product.discountPercentage > 0 && (
+        {product.product_discountPercentage > 0 && (
           <p className="new-price">
             {
               //calculate discounted price
               (
-                product.price -
-                product.price * (product.discountPercentage / 100)
+                product.product_price -
+                product.product_price *
+                  (product.product_discountPercentage / 100)
               ).toFixed(2)
             }{" "}
             $

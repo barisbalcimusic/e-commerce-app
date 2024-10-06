@@ -7,8 +7,8 @@ const Products = ({ products }) => {
         {products ? (
           products.map((product) => (
             <ProductCard
-              key={product.id}
-              productId={product.id}
+              key={product.product_id}
+              productId={product.product_id}
               product={product}
             />
           ))

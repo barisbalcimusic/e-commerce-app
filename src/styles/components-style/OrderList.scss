@@ -1,0 +1,31 @@
+.user-setting-container {
+  @include flex-col-centered;
+  width: 100%;
+  min-height: calc(100vh - $header-height);
+
+  // orders rows & columns
+  table {
+    border-collapse: collapse;
+    text-align: center;
+    background-color: rgb(244, 241, 241);
+  }
+
+  .order-tr,
+  .order-td,
+  .order-th {
+    border: solid black 1px;
+  }
+
+  .order-tr,
+  .order-td {
+    padding: 15px;
+  }
+}
+
+// product rows & columns
+.product-tr,
+.product-td,
+.product-th {
+  border: solid black 1px;
+  background-color: rgb(247, 247, 153);
+}

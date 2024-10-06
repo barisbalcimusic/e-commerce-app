@@ -18,7 +18,9 @@ const Counter = ({ product }) => {
   };
 
   //set amount of the current product as initial value
-  const initialValue = cart.find((curr) => curr.id === product.id).amount;
+  const initialValue = cart.find(
+    (curr) => curr.product_id === product.product_id
+  ).amount;
 
   const [state, dispatch] = useReducer(reducer, initialValue);
 
@@ -26,7 +28,7 @@ const Counter = ({ product }) => {
     if (state) {
       //find the index of the current product in cart
       const existingProductIndex = cart.findIndex(
-        (curr) => curr.id === product.id
+        (curr) => curr.product_id === product.product_id
       );
       const updatedCart = [...cart];
       //update the amount of the current product
@@ -40,7 +42,7 @@ const Counter = ({ product }) => {
 
   const handleReset = () => {
     dispatch("reset");
-    setCart(cart.filter((curr) => curr.id !== product.id));
+    setCart(cart.filter((curr) => curr.product_id !== product.product_id));
   };
 
   return (

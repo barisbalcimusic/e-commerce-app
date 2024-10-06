@@ -60,9 +60,9 @@ const Checkout = () => {
     const orderedProducts = [];
     cart.map((product) =>
       orderedProducts.push({
-        id: product.id,
-        amount: product.amount,
-        singlePrice: product.price,
+        id: product.product_id,
+        amount: product.product_amount,
+        singlePrice: product.product_price,
       })
     );
     setOrder({

@@ -37,7 +37,7 @@ const LoginForm = ({ setLoginSuccess }) => {
 
   return (
     <form onSubmit={handleSubmit} className="login-form">
-      <input
+      <input  
         className="form-input"
         value={email}
         onChange={(e) => setEmail(e.target.value)}
