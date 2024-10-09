@@ -26,7 +26,7 @@ const Checkout = () => {
   useEffect(() => {
     if (isSubmitted) {
       postOrder(userData.data.id, total, order)
-        .then((data) => {
+        .then(() => {
           setSuccess(true);
         })
         .catch((error) => console.error(error));

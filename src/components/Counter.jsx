@@ -20,7 +20,7 @@ const Counter = ({ product }) => {
   //set amount of the current product as initial value
   const initialValue = cart.find(
     (curr) => curr.product_id === product.product_id
-  ).amount;
+  ).product_amount;
 
   const [state, dispatch] = useReducer(reducer, initialValue);
 
@@ -34,7 +34,7 @@ const Counter = ({ product }) => {
       //update the amount of the current product
       updatedCart[existingProductIndex] = {
         ...updatedCart[existingProductIndex],
-        amount: state,
+        product_amount: state,
       };
       setCart(updatedCart);
     }

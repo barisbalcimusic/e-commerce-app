@@ -6,7 +6,7 @@ const AddButton = ({ product }) => {
 
   const buttonRef = useRef();
 
-  const { product_id, product_price } = product;
+  const { product_id, product_title, product_price } = product;
 
   const handleAddToCart = () => {
     let productToAdd;
@@ -17,6 +17,7 @@ const AddButton = ({ product }) => {
     if (!existingProduct) {
       productToAdd = {
         product_id,
+        product_title,
         product_price: parseFloat(product_price),
         product_amount: 1,
       };

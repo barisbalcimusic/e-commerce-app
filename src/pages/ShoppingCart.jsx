@@ -37,6 +37,7 @@ const ShoppingCart = () => {
         <table>
           <thead>
             <tr>
+              <th>Product ID</th>
               <th>Title</th>
               <th>Price</th>
               <th>Count</th>
@@ -47,7 +48,7 @@ const ShoppingCart = () => {
               <ProductInCart key={product.product_id} product={product} />
             ))}
             <tr>
-              <td className="total-td" colSpan={3}>
+              <td className="total-td" colSpan={4}>
                 <b>Total: </b>
                 {total}$
               </td>

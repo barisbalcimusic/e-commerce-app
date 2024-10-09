@@ -43,7 +43,7 @@ const ProductCard = ({ productId, product }) => {
           )}
         </div>
         <div className="button-div">
-          <AddButton productInfo={{ productId, product }} />
+          <AddButton product={product} />
         </div>
       </div>
     </div>

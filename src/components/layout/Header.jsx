@@ -16,9 +16,11 @@ import { useResponsivityContext } from "../../contexts/ResponsivityContext";
 import { useProductsContext } from "../../contexts/ProductsContext";
 import { useEffect, useRef } from "react";
 import { useSearchContext } from "../../contexts/SearchContext";
+import { useRenderContext } from "../../contexts/RenderContext";
 
 const Header = () => {
   const { handleSidebarClick, sidebarRef, headerRef } = useSidebarContext();
+  const { setRenderedComponent } = useRenderContext();
   const { isLoggedIn, userData } = useAuthContext();
   const { cart } = useCartContext();
   const { isMobile } = useResponsivityContext();
@@ -85,7 +87,11 @@ const Header = () => {
           <div className="nav-right">
             <p>Hello {userData ? userData.data.firstname : "Guest"}</p>
             <Link aria-label="credentials" to={isLoggedIn ? "/user" : "/auth"}>
-              <FontAwesomeIcon className="user-icon" icon={faUser} />
+              <FontAwesomeIcon
+                className="user-icon"
+                icon={faUser}
+                onClick={() => setRenderedComponent(null)}
+              />
             </Link>
             <Link aria-label="cart" to="/cart">
               <FontAwesomeIcon className="cart-icon" icon={faCartShopping} />

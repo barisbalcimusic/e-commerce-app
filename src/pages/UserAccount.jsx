@@ -5,10 +5,11 @@ import OrderList from "../components/OrderList";
 import { useNavigate } from "react-router-dom";
 import Adresses from "../components/Adresses";
 import Security from "../components/Security";
+import { useRenderContext } from "../contexts/RenderContext";
 
 const UserAccount = () => {
-  const [renderedComponent, setRenderedComponent] = useState(null);
   const { setIsLoggedIn, userData, setUserData } = useAuthContext();
+  const { renderedComponent, setRenderedComponent } = useRenderContext();
   const navigate = useNavigate();
 
   const handleLogout = () => {
