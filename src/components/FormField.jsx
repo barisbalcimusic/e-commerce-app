@@ -17,7 +17,7 @@ const FormField = ({
           value={fieldValue}
           onChange={(e) => setFieldValue(e.target.value)}
           disabled={!fieldEditAktiv}
-          placeholder={fieldName === "Password" && "********"}
+          placeholder={fieldName === "password" && "********"}
         />
         {!fieldEditAktiv ? (
           <button type="button" onClick={() => setFieldEditAktiv(true)}>

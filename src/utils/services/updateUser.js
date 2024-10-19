@@ -1,5 +1,5 @@
-export const updateUser = async (fieldToEdit, fieldStates) => {
-  let fieldToUpdate =
+export const updateUser = async (fieldToEdit, fieldStates, userId) => {
+  let value =
     fieldToEdit === "firstname"
       ? fieldStates.firstname
       : fieldToEdit === "lastname"
@@ -14,7 +14,7 @@ export const updateUser = async (fieldToEdit, fieldStates) => {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ fieldToUpdate }),
+      body: JSON.stringify({ fieldToEdit, value, userId }),
       credentials: "include",
     });
 

@@ -39,60 +39,65 @@ const OrderList = () => {
       <h1>My Orders</h1>
 
       <button onClick={() => setRenderedComponent(null)}>back</button>
-      <table>
-        <thead>
-          <tr className="order-tr">
-            <th className="order-th">Order Nr.</th>
-            <th className="order-th">Date</th>
-            <th className="order-th">Total</th>
-          </tr>
-        </thead>
-        <tbody>
-          {orders.map((order) => {
-            return (
-              <>
-                <tr className="order-tr">
-                  <td className="order-td">{order.order_id}</td>
-                  <td className="order-td">{order.order_date}</td>
-                  <td className="order-td">{order.total_amount}$</td>
-                  <td className="order-td">
-                    <button
-                      value={order.order_id}
-                      onClick={handleDetailsButton}>
-                      Details
-                    </button>
-                  </td>
-                </tr>
-                {detailsOpened && Number(selectedOrder) === order.order_id && (
-                  <>
-                    {" "}
-                    <tr className="product-tr">
-                      <th className="product-th">Amount</th>
-                      <th className="product-th">Product</th>
-                      <th className="product-th" colSpan={2}>
-                        Price
-                      </th>
-                    </tr>
-                    {orderDetails.map((product) => {
-                      return (
+      {orders.length > 0 ? (
+        <table>
+          <thead>
+            <tr className="order-tr">
+              <th className="order-th">Order Nr.</th>
+              <th className="order-th">Date</th>
+              <th className="order-th">Total</th>
+            </tr>
+          </thead>
+          <tbody>
+            {orders.map((order) => {
+              return (
+                <>
+                  <tr className="order-tr">
+                    <td className="order-td">{order.order_id}</td>
+                    <td className="order-td">{order.order_date}</td>
+                    <td className="order-td">{order.total_amount}$</td>
+                    <td className="order-td">
+                      <button
+                        value={order.order_id}
+                        onClick={handleDetailsButton}>
+                        Details
+                      </button>
+                    </td>
+                  </tr>
+                  {detailsOpened &&
+                    Number(selectedOrder) === order.order_id && (
+                      <>
+                        {" "}
                         <tr className="product-tr">
-                          <td className="product-td">{product.quantity}</td>
-                          <td className="product-td">
-                            {product.product_title}
-                          </td>
-                          <td className="product-td" colSpan={2}>
-                            {product.product_price}$
-                          </td>
+                          <th className="product-th">Amount</th>
+                          <th className="product-th">Product</th>
+                          <th className="product-th" colSpan={2}>
+                            Price
+                          </th>
                         </tr>
-                      );
-                    })}
-                  </>
-                )}
-              </>
-            );
-          })}
-        </tbody>
-      </table>
+                        {orderDetails.map((product) => {
+                          return (
+                            <tr className="product-tr">
+                              <td className="product-td">{product.quantity}</td>
+                              <td className="product-td">
+                                {product.product_title}
+                              </td>
+                              <td className="product-td" colSpan={2}>
+                                {product.product_price}$
+                              </td>
+                            </tr>
+                          );
+                        })}
+                      </>
+                    )}
+                </>
+              );
+            })}
+          </tbody>
+        </table>
+      ) : (
+        <p>No orders found</p>
+      )}
     </div>
   );
 };

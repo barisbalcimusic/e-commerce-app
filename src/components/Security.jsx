@@ -29,7 +29,7 @@ const Security = () => {
       case "firstname":
       case "lastname":
       case "password":
-        updateUser(fieldToEdit, fieldStates)
+        updateUser(fieldToEdit, fieldStates, userData.data.id)
           .then((data) => {
             setSuccess(true);
             console.log(data);
@@ -47,7 +47,7 @@ const Security = () => {
           });
         break;
       case "delete":
-        deleteAccount()
+        deleteAccount(userData.data.id)
           .then((data) => {
             setSuccess(true);
             console.log(data);
